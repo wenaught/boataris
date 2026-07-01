@@ -13,26 +13,19 @@
 	<meta property="og:image" content="undefined">
 	<meta charset="UTF-8">
 	<meta property="og:site_name" content="Боатарис: Открытый стол">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
-	<script async="" id="webpage-script" src="site-lib/scripts/webpage.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+	<script async="" id="webpage-script" src="site-lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
 	<link rel="icon" href="site-lib/media/favicon.png">
 	<link rel="stylesheet" href="site-lib/styles/obsidian.css">
-	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/other-plugins.css">
 	</noscript>
-	<link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/global-variable-styles.css">
 	</noscript>
-	<link rel="preload" href="site-lib/styles/main-styles.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/main-styles.css">
 	</noscript>
 	<style>
@@ -395,13 +388,11 @@
 			border-radius: var(--radius-s)
 		}
 	</style>
-	<script
-		defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
+	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
 <body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
-	<script
-		defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
+	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
 	</div>
@@ -414,17 +405,13 @@
 					<div class="sidebar-topbar">
 						<div class="topbar-content">
 							<div id="search-container">
-								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false"
-										placeholder="Поиск...">
+								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search...">
 									<div aria-label="Clear search" id="search-clear-button"></div>
 								</div>
 							</div>
 						</div>
-						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg"
-								width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path
-									d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
 								</path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
@@ -437,13 +424,11 @@
 							<link itemprop="include" href="site-lib/html/file-tree-content.html">
 						</div>
 					</div>
-					<script
-						defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
+					<script defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
 				</div>
 			</div>
 			<div id="center-content" class="leaf">
-				<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties"
-					data-type="markdown">
+				<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown">
 					<style id="MJX-CHTML-styles"></style>
 					<div class="markdown-preview-sizer markdown-preview-section">
 						<div class="header">
@@ -455,41 +440,29 @@
 						<div class="el-blockquote">
 							<blockquote dir="auto">
 								<ul class="has-list-bullet">
-									<li data-line="0" dir="auto"><span
-											class="list-bullet"></span><strong>Требования:</strong> нет</li>
+									<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Требования:</strong> нет</li>
 									<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Ключевые
 											характеристики:</strong> ЛВК</li>
 									<li data-line="2" dir="auto"><span class="list-bullet"></span><strong>Кость
 											здоровья:</strong> 1к4</li>
 									<li data-line="3" dir="auto"><span class="list-bullet"></span><strong>Максимальный
 											уровень:</strong> 14</li>
-									<li data-line="4" dir="auto"><span
-											class="list-bullet"></span><strong>Доспехи:</strong> кожаные, без щита</li>
-									<li data-line="5" dir="auto"><span
-											class="list-bullet"></span><strong>Оружие:</strong> любое</li>
-									<li data-line="6" dir="auto"><span class="list-bullet"></span><strong>Владение
-											оружием:</strong> полубоевой класс</li>
+									<li data-line="4" dir="auto"><span class="list-bullet"></span><strong>Доспехи:</strong> кожаные, без щита</li>
+									<li data-line="5" dir="auto"><span class="list-bullet"></span><strong>Оружие:</strong> любое</li>
+									<li data-line="6" dir="auto"><span class="list-bullet"></span><strong><a data-href="Владение оружием" href="правила-игры/опциональные-правила/владение-оружием.html" class="internal-link" target="_self" rel="noopener nofollow">Владение
+												оружием</a>:</strong> полубоевой класс</li>
 								</ul>
-								<p>Плуты выживают за счёт своих навыков обмана и незаметности. Уникальный набор талантов
-									делает их очень полезными компаньонами в приключениях. Однако, не стоит им всегда
-									доверять.</p>
+								<p>Плуты выживают за счёт своих навыков обмана и незаметности и процветают в больших
+									городах. Уникальный набор талантов делает их очень полезными напарниками в
+									приключениях, но не всегда стоит им доверять.</p>
 								<p><strong>Корректировка характеристик:</strong> на третьем шаге создания персонажа
 									плуты не могут понижать СИЛ.</p>
-								<p><a data-tooltip-position="top" aria-label="Люди &gt; Данувийцы"
-										data-href="Люди#Данувийцы" href="мир-боатариса/народы/люди.html"
-										class="internal-link" target="_self" rel="noopener nofollow">Данувийцы</a> и <a
-										data-tooltip-position="top" aria-label="Люди &gt; Кельваны"
-										data-href="Люди#Кельваны" href="мир-боатариса/народы/люди.html"
-										class="internal-link" target="_self" rel="noopener nofollow">кельваны</a> могут
+								<p><a data-tooltip-position="top" aria-label="Люди &gt; Данувийцы" data-href="Люди#Данувийцы" href="мир-боатариса/народы/люди.html#Данувийцы" class="internal-link" target="_self" rel="noopener nofollow">Данувийцы</a> и <a data-tooltip-position="top" aria-label="Люди &gt; Кельваны" data-href="Люди#Кельваны" href="мир-боатариса/народы/люди.html#Кельваны" class="internal-link" target="_self" rel="noopener nofollow">кельваны</a> могут
 									быть плутами. </p>
 							</blockquote>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Удар сзади" dir="auto" class="heading" id="Удар_сзади_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Удар сзади" dir="auto" class="heading" id="Удар_сзади_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Удар сзади</h2>
 						</div>
@@ -498,11 +471,7 @@
 								попаданию и удвоенный урон.</p>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Бой" dir="auto" class="heading" id="Бой_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Бой" dir="auto" class="heading" id="Бой_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Бой</h2>
 						</div>
@@ -512,11 +481,7 @@
 								оружие.</p>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Навыки плута" dir="auto" class="heading" id="Навыки_плута_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Навыки плута" dir="auto" class="heading" id="Навыки_плута_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Навыки плута</h2>
 						</div>
@@ -540,11 +505,7 @@
 							<ul class="has-list-bullet">
 								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Лазание по
 										отвесным стенам:</strong> требуется проверка за каждые 100’ подъёма. При провале
-									плут срывается и получает <a data-tooltip-position="top"
-										aria-label="https://ose.ruleplaying.com/adventures/adventuring/hazards-and-challenges#%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"
-										rel="noopener nofollow" class="external-link is-unresolved"
-										href="https://ose.ruleplaying.com/adventures/adventuring/hazards-and-challenges#%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"
-										target="_self">урон от падения</a>.</li>
+									плут срывается и получает <a data-tooltip-position="top" aria-label="https://ose.ruleplaying.com/adventures/adventuring/hazards-and-challenges#%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" rel="noopener nofollow" class="external-link is-unresolved" href="https://ose.ruleplaying.com/adventures/adventuring/hazards-and-challenges#%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" target="_self">урон от падения</a>.</li>
 								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Поиск и
 										обезвреживание ловушек на сокровищах (ПЛ):</strong> требуется проверка для
 									обнаружения ловушки на сокровищах и затем другая проверка для попытки обезвредить
@@ -558,11 +519,7 @@
 								<li data-line="4" dir="auto"><span class="list-bullet"></span><strong>Бесшумное
 										передвижение (БП):</strong> плут может попытаться пройти мимо незамеченным.</li>
 								<li data-line="5" dir="auto"><span class="list-bullet"></span><strong>Вскрытие замков
-										(ВЗ):</strong> требуются <a data-tooltip-position="top"
-										aria-label="https://ose.ruleplaying.com/characters/equipment/adventuring-gear"
-										rel="noopener nofollow" class="external-link is-unresolved"
-										href="https://ose.ruleplaying.com/characters/equipment/adventuring-gear"
-										target="_self">воровские инструменты</a>. Проверка взлома может быть произведена
+										(ВЗ):</strong> требуются <a data-tooltip-position="top" aria-label="https://ose.ruleplaying.com/characters/equipment/adventuring-gear" rel="noopener nofollow" class="external-link is-unresolved" href="https://ose.ruleplaying.com/characters/equipment/adventuring-gear" target="_self">воровские инструменты</a>. Проверка взлома может быть произведена
 									только один раз для каждого замка. Повторную попытку можно совершить после повышения
 									уровня.</li>
 								<li data-line="6" dir="auto"><span class="list-bullet"></span><strong>Карманная кража
@@ -578,12 +535,7 @@
 							</ul>
 						</div>
 						<div class="el-h3">
-							<h3 data-heading="Осведомлённость игрока" dir="auto" class="heading"
-								id="Осведомлённость_игрока_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h3 data-heading="Осведомлённость игрока" dir="auto" class="heading" id="Осведомлённость_игрока_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Осведомлённость игрока</h3>
 						</div>
@@ -596,10 +548,7 @@
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="После 9-го уровня" dir="auto" class="heading" id="После_9-го_уровня_0">
-								<span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+								<span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>После 9-го уровня
 							</h2>
@@ -611,12 +560,7 @@
 								использовать своих сторонников для основания Гильдии воров.</p>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Развитие плута с повышением уровня" dir="auto" class="heading"
-								id="Развитие_плута_с_повышением_уровня_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Развитие плута с повышением уровня" dir="auto" class="heading" id="Развитие_плута_с_повышением_уровня_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Развитие плута с повышением уровня</h2>
 						</div>
@@ -624,7 +568,7 @@
 							<table>
 								<thead>
 									<tr>
-										<th dir="ltr">Ур.</th>
+										<th dir="ltr">Уровень</th>
 										<th dir="ltr">ПО</th>
 										<th dir="ltr">КЗ</th>
 										<th dir="ltr">БА</th>
@@ -806,15 +750,11 @@
 				<div id="right-sidebar" class="sidebar">
 					<div class="sidebar-handle"></div>
 					<div class="sidebar-topbar">
-						<div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input"
-								id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
+						<div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input" id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
 								<div class="toggle-background"></div>
 							</label></div>
-						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg"
-								width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path
-									d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
 								</path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
@@ -830,19 +770,11 @@
 								</div>
 								<div class="graph-view-placeholder">
 									<div class="graph-view-container">
-										<div class="graph-icon graph-expand" role="button" aria-label="Expand"
-											data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg"
-												width="24" height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2" stroke-linecap="round"
-												stroke-linejoin="round" class="svg-icon">
+										<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
 												<line x1="7" y1="17" x2="17" y2="7"></line>
 												<polyline points="7 7 17 7 17 17"></polyline>
 											</svg></div>
-										<div class="graph-icon graph-global" role="button" aria-label="Global Graph"
-											data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg"
-												width="24" height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2" stroke-linecap="round"
-												stroke-linejoin="round" class="svg-icon lucide-git-fork">
+										<div class="graph-icon graph-global" role="button" aria-label="Global Graph" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-git-fork">
 												<circle cx="12" cy="18" r="3"></circle>
 												<circle cx="6" cy="6" r="3"></circle>
 												<circle cx="18" cy="6" r="3"></circle>
@@ -855,81 +787,46 @@
 							</div>
 							<div id="outline" class=" tree-container">
 								<div class="feature-header">
-									<div class="feature-title">Содержание</div><button
-										class="clickable-icon nav-action-button tree-collapse-all"
-										aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-											height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-											stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round"></svg></button>
+									<div class="feature-title">Содержание</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
 								</div>
-								<div class="tree-item mod-collapsible" data-depth="1"><a
-										class="tree-item-self is-clickable mod-collapsible"
-										href="правила-игры/классы/плут.html#Плут_0" data-path="#Плут_0">
-										<div class="tree-item-icon collapse-icon"><svg
-												xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-												stroke-linecap="round" stroke-linejoin="round"
-												class="svg-icon right-triangle">
+								<div class="tree-item mod-collapsible" data-depth="1"><a class="tree-item-self is-clickable mod-collapsible" href="правила-игры/классы/плут.html#Плут_0" data-path="#Плут_0">
+										<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 												<path d="M3 8L12 17L21 8"></path>
 											</svg></div>
 										<div class="tree-item-inner heading-link" heading-name="Плут">Плут</div>
 									</a>
 									<div class="tree-item-children">
-										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable"
-												href="правила-игры/классы/плут.html#Удар_сзади_0"
-												data-path="#Удар_сзади_0">
-												<div class="tree-item-inner heading-link" heading-name="Удар сзади">Удар
-													сзади</div>
+										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="правила-игры/классы/плут.html#Удар_сзади_0" data-path="#Удар_сзади_0">
+												<div class="tree-item-inner heading-link" heading-name="Удар сзади">Удар сзади</div>
 											</a>
 											<div class="tree-item-children"></div>
 										</div>
-										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable"
-												href="правила-игры/классы/плут.html#Бой_0" data-path="#Бой_0">
+										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="правила-игры/классы/плут.html#Бой_0" data-path="#Бой_0">
 												<div class="tree-item-inner heading-link" heading-name="Бой">Бой</div>
 											</a>
 											<div class="tree-item-children"></div>
 										</div>
-										<div class="tree-item mod-collapsible" data-depth="2"><a
-												class="tree-item-self is-clickable mod-collapsible"
-												href="правила-игры/классы/плут.html#Навыки_плута_0"
-												data-path="#Навыки_плута_0">
-												<div class="tree-item-icon collapse-icon"><svg
-														xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-														viewBox="0 0 24 24" fill="none" stroke="currentColor"
-														stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-														class="svg-icon right-triangle">
+										<div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable mod-collapsible" href="правила-игры/классы/плут.html#Навыки_плута_0" data-path="#Навыки_плута_0">
+												<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 														<path d="M3 8L12 17L21 8"></path>
 													</svg></div>
-												<div class="tree-item-inner heading-link" heading-name="Навыки плута">
-													Навыки плута</div>
+												<div class="tree-item-inner heading-link" heading-name="Навыки плута">Навыки плута</div>
 											</a>
 											<div class="tree-item-children">
-												<div class="tree-item" data-depth="3"><a
-														class="tree-item-self is-clickable"
-														href="правила-игры/классы/плут.html#Осведомлённость_игрока_0"
-														data-path="#Осведомлённость_игрока_0">
-														<div class="tree-item-inner heading-link"
-															heading-name="Осведомлённость игрока">Осведомлённость игрока
-														</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/классы/плут.html#Осведомлённость_игрока_0" data-path="#Осведомлённость_игрока_0">
+														<div class="tree-item-inner heading-link" heading-name="Осведомлённость игрока">Осведомлённость игрока</div>
 													</a>
 													<div class="tree-item-children"></div>
 												</div>
 											</div>
 										</div>
-										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable"
-												href="правила-игры/классы/плут.html#После_9-го_уровня_0"
-												data-path="#После_9-го_уровня_0">
-												<div class="tree-item-inner heading-link"
-													heading-name="После 9-го уровня">После 9-го уровня</div>
+										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="правила-игры/классы/плут.html#После_9-го_уровня_0" data-path="#После_9-го_уровня_0">
+												<div class="tree-item-inner heading-link" heading-name="После 9-го уровня">После 9-го уровня</div>
 											</a>
 											<div class="tree-item-children"></div>
 										</div>
-										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable"
-												href="правила-игры/классы/плут.html#Развитие_плута_с_повышением_уровня_0"
-												data-path="#Развитие_плута_с_повышением_уровня_0">
-												<div class="tree-item-inner heading-link"
-													heading-name="Развитие плута с повышением уровня">Развитие плута с
-													повышением уровня</div>
+										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="правила-игры/классы/плут.html#Развитие_плута_с_повышением_уровня_0" data-path="#Развитие_плута_с_повышением_уровня_0">
+												<div class="tree-item-inner heading-link" heading-name="Развитие плута с повышением уровня">Развитие плута с повышением уровня</div>
 											</a>
 											<div class="tree-item-children"></div>
 										</div>
@@ -938,8 +835,7 @@
 							</div>
 						</div>
 					</div>
-					<script
-						defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
+					<script defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
 				</div>
 			</div>
 		</div>

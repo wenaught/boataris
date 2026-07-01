@@ -13,26 +13,19 @@
 	<meta property="og:image" content="undefined">
 	<meta charset="UTF-8">
 	<meta property="og:site_name" content="Боатарис: Открытый стол">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
-	<script async="" id="webpage-script" src="site-lib/scripts/webpage.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+	<script async="" id="webpage-script" src="site-lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
 	<link rel="icon" href="site-lib/media/favicon.png">
 	<link rel="stylesheet" href="site-lib/styles/obsidian.css">
-	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/other-plugins.css">
 	</noscript>
-	<link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/global-variable-styles.css">
 	</noscript>
-	<link rel="preload" href="site-lib/styles/main-styles.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/main-styles.css">
 	</noscript>
 	<style>
@@ -395,13 +388,11 @@
 			border-radius: var(--radius-s)
 		}
 	</style>
-	<script
-		defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
+	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
 <body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
-	<script
-		defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
+	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
 	</div>
@@ -414,17 +405,13 @@
 					<div class="sidebar-topbar">
 						<div class="topbar-content">
 							<div id="search-container">
-								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false"
-										placeholder="Поиск...">
+								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search...">
 									<div aria-label="Clear search" id="search-clear-button"></div>
 								</div>
 							</div>
 						</div>
-						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg"
-								width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path
-									d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
 								</path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
@@ -437,16 +424,13 @@
 							<link itemprop="include" href="site-lib/html/file-tree-content.html">
 						</div>
 					</div>
-					<script
-						defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
+					<script defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
 				</div>
 			</div>
 			<div id="center-content" class="leaf">
-				<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties"
-					data-type="markdown">
+				<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown">
 					<style id="MJX-CHTML-styles"></style>
-					<pre class="frontmatter language-yaml"
-						style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Начальная страница</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+					<pre class="frontmatter language-yaml" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Начальная страница</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
 					<div class="markdown-preview-sizer markdown-preview-section">
 						<div class="header">
 							<h1 class="page-title heading inline-title" id="Начальная_страница_0">Начальная страница
@@ -456,73 +440,43 @@
 						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;">
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Общие правила" dir="auto" class="heading" id="Общие_правила_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Общие правила" dir="auto" class="heading" id="Общие_правила_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Общие правила</h2>
 						</div>
 						<div class="el-p">
 							<p dir="auto">Используются основные правила <strong><em>Old School Essentials Classic
-										Fantasy</em></strong>, доступные в русском переводе <a
-									data-tooltip-position="top" aria-label="https://ose.ruleplaying.com"
-									rel="noopener nofollow" class="external-link is-unresolved"
-									href="https://ose.ruleplaying.com" target="_self">здесь</a>. Все используемые
+										Fantasy</em></strong>, доступные в русском переводе <a data-tooltip-position="top" aria-label="https://ose.ruleplaying.com" rel="noopener nofollow" class="external-link is-unresolved" href="https://ose.ruleplaying.com" target="_self">здесь</a>. Все используемые
 								опциональные правила, модификации и хоумрулы приведены на этой странице.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Лист персонажа, адаптированный под используемые правила, доступен <a
-									data-tooltip-position="top" aria-label="Boataris Character Sheet.pdf"
-									data-href="Boataris Character Sheet.pdf"
-									href="assets/boataris-character-sheet.pdf" class="internal-link"
-									target="_self" rel="noopener nofollow">здесь</a>.</p>
+							<p dir="auto">Лист персонажа, адаптированный под используемые правила, доступен <a data-tooltip-position="top" aria-label="Boataris Character Sheet.pdf" data-href="Boataris Character Sheet.pdf" href="assets/boataris-character-sheet.html" class="internal-link" target="_self" rel="noopener nofollow">здесь</a>.</p>
 						</div>
 						<div class="el-h3">
 							<h3 data-heading="Классы персонажей" dir="auto" class="heading" id="Классы_персонажей_0">
-								<span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+								<span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
-									</svg></span>Классы персонажей</h3>
+									</svg></span>Классы персонажей
+							</h3>
 						</div>
 						<div class="el-p">
 							<p dir="auto">Доступные классы персонажей:</p>
 						</div>
 						<div class="el-ul">
 							<ul class="has-list-bullet">
-								<li data-line="0" dir="auto"><span class="list-bullet"></span><a data-href="Бард"
-										href="правила-игры/классы/бард.html" class="internal-link" target="_self"
-										rel="noopener nofollow">Бард</a>;</li>
-								<li data-line="1" dir="auto"><span class="list-bullet"></span><a data-href="Воин"
-										href="правила-игры/классы/воин.html" class="internal-link" target="_self"
-										rel="noopener nofollow">Воин</a>;</li>
-								<li data-line="2" dir="auto"><span class="list-bullet"></span><a data-href="Дварф"
-										href="правила-игры/классы/дварф.html" class="internal-link" target="_self"
-										rel="noopener nofollow">Дварф</a>;</li>
-								<li data-line="3" dir="auto"><span class="list-bullet"></span><a data-href="Маг"
-										href="правила-игры/классы/маг.html" class="internal-link" target="_self"
-										rel="noopener nofollow">Маг</a>;</li>
-								<li data-line="4" dir="auto"><span class="list-bullet"></span><a data-href="Плут"
-										href="правила-игры/классы/плут.html" class="internal-link" target="_self"
-										rel="noopener nofollow">Плут</a>;</li>
-								<li data-line="5" dir="auto"><span class="list-bullet"></span><a data-href="Эльф"
-										href="правила-игры/классы/эльф.html" class="internal-link" target="_self"
-										rel="noopener nofollow">Эльф</a>.</li>
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><a data-href="Бард" href="правила-игры/классы/бард.html" class="internal-link" target="_self" rel="noopener nofollow">Бард</a>;</li>
+								<li data-line="1" dir="auto"><span class="list-bullet"></span><a data-href="Воин" href="правила-игры/классы/воин.html" class="internal-link" target="_self" rel="noopener nofollow">Воин</a>;</li>
+								<li data-line="2" dir="auto"><span class="list-bullet"></span><a data-href="Дварф" href="правила-игры/классы/дварф.html" class="internal-link" target="_self" rel="noopener nofollow">Дварф</a>;</li>
+								<li data-line="3" dir="auto"><span class="list-bullet"></span><a data-href="Маг" href="правила-игры/классы/маг.html" class="internal-link" target="_self" rel="noopener nofollow">Маг</a>;</li>
+								<li data-line="4" dir="auto"><span class="list-bullet"></span><a data-href="Плут" href="правила-игры/классы/плут.html" class="internal-link" target="_self" rel="noopener nofollow">Плут</a>;</li>
+								<li data-line="5" dir="auto"><span class="list-bullet"></span><a data-href="Эльф" href="правила-игры/классы/эльф.html" class="internal-link" target="_self" rel="noopener nofollow">Эльф</a>.</li>
 							</ul>
 						</div>
 						<div class="el-hr">
 							<hr>
 						</div>
 						<div class="el-h3">
-							<h3 data-heading="Используемые опциональные правила" dir="auto" class="heading"
-								id="Используемые_опциональные_правила_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h3 data-heading="Используемые опциональные правила" dir="auto" class="heading" id="Используемые_опциональные_правила_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Используемые опциональные правила</h3>
 						</div>
@@ -532,15 +486,9 @@
 						</div>
 						<div class="el-ul">
 							<ul class="has-list-bullet">
-								<li data-line="0" dir="auto"><span class="list-bullet"></span><a
-										data-href="Нагрузка по предметам"
-										href="правила-игры/опциональные-правила/нагрузка-по-предметам.html"
-										class="internal-link" target="_self" rel="noopener nofollow">Нагрузка по
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><a data-href="Нагрузка по предметам" href="правила-игры/опциональные-правила/нагрузка-по-предметам.html" class="internal-link" target="_self" rel="noopener nofollow">Нагрузка по
 										предметам</a>, <strong><em>Carcass Crawler #2</em></strong>.</li>
-								<li data-line="1" dir="auto"><span class="list-bullet"></span><a
-										data-href="Владение оружием"
-										href="правила-игры/опциональные-правила/владение-оружием.html"
-										class="internal-link" target="_self" rel="noopener nofollow">Владение
+								<li data-line="1" dir="auto"><span class="list-bullet"></span><a data-href="Владение оружием" href="правила-игры/опциональные-правила/владение-оружием.html" class="internal-link" target="_self" rel="noopener nofollow">Владение
 										оружием</a>, <strong><em>Advanced Fantasy</em></strong>.</li>
 							</ul>
 						</div>
@@ -548,25 +496,18 @@
 							<hr>
 						</div>
 						<div class="el-h3">
-							<h3 data-heading="Правила из сторонних источников" dir="auto" class="heading"
-								id="Правила_из_сторонних_источников_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h3 data-heading="Правила из сторонних источников" dir="auto" class="heading" id="Правила_из_сторонних_источников_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Правила из сторонних источников</h3>
 						</div>
 						<div class="el-p">
 							<p dir="auto">Здесь перечислены правила, взятые из различных источников, не связанных с
-								<strong><em>Necrotic Gnome</em></strong>.</p>
+								<strong><em>Necrotic Gnome</em></strong>.
+							</p>
 						</div>
 						<div class="el-ul">
 							<ul class="has-list-bullet">
-								<li data-line="0" dir="auto"><span class="list-bullet"></span><a
-										data-href="Проверка атрибутов"
-										href="правила-игры/правила-из-сторонних-источников/проверка-атрибутов.html"
-										class="internal-link" target="_self" rel="noopener nofollow">Проверка
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><a data-href="Проверка атрибутов" href="правила-игры/правила-из-сторонних-источников/проверка-атрибутов.html" class="internal-link" target="_self" rel="noopener nofollow">Проверка
 										атрибутов</a>, <strong><em>B/X Options: Alternate Magicks</em></strong>.</li>
 							</ul>
 						</div>
@@ -574,51 +515,16 @@
 							<hr>
 						</div>
 						<div class="el-h3">
-							<h3 data-heading="Хоумрулы" dir="auto" class="heading" id="Хоумрулы_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h3 data-heading="Хоумрулы" dir="auto" class="heading" id="Хоумрулы_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Хоумрулы</h3>
 						</div>
 						<div class="el-ul">
 							<ul class="has-list-bullet">
-								<li data-line="0" dir="auto"><span class="list-bullet"></span><a data-href="Языки"
-										href="правила-игры/хоумрулы/языки.html" class="internal-link" target="_self"
-										rel="noopener nofollow">Языки</a>, на основе многочисленных постов
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><a data-href="Языки" href="правила-игры/хоумрулы/языки.html" class="internal-link" target="_self" rel="noopener nofollow">Языки</a>, на основе многочисленных постов
 									OSR-блогосферы.</li>
+								<li data-line="1" dir="auto"><span class="list-bullet"></span><a data-href="Темнота" href="правила-игры/хоумрулы/темнота.html" class="internal-link" target="_self" rel="noopener nofollow">Темнота</a>, на основе <a data-tooltip-position="top" aria-label="https://knightattheopera.blogspot.com/2019/09/lets-do-some-more-diy-d-and-hack-rules.html" rel="noopener nofollow" class="external-link is-unresolved" href="https://knightattheopera.blogspot.com/2019/09/lets-do-some-more-diy-d-and-hack-rules.html" target="_self">поста Knight at the Opera</a>.</li>
 							</ul>
-						</div>
-						<div class="el-hr">
-							<hr>
-						</div>
-						<div class="el-h3">
-							<h3 data-heading="Опыт за исследования" dir="auto" class="heading"
-								id="Опыт_за_исследования_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
-										<path d="M3 8L12 17L21 8"></path>
-									</svg></span>Опыт за исследования</h3>
-						</div>
-						<div class="el-hr">
-							<hr>
-						</div>
-						<div class="el-h3">
-							<h3 data-heading="Сокровища и богатство" dir="auto" class="heading"
-								id="Сокровища_и_богатство_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
-										<path d="M3 8L12 17L21 8"></path>
-									</svg></span>Сокровища и богатство</h3>
-						</div>
-						<div class="el-p">
-							<p dir="auto">Стандартная денежная единица на северо-востоке Боатариса — серебряная монета.
-							</p>
 						</div>
 						<div class="footer">
 							<div class="data-bar"></div>
@@ -630,15 +536,11 @@
 				<div id="right-sidebar" class="sidebar">
 					<div class="sidebar-handle"></div>
 					<div class="sidebar-topbar">
-						<div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input"
-								id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
+						<div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input" id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
 								<div class="toggle-background"></div>
 							</label></div>
-						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg"
-								width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path
-									d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
 								</path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
@@ -654,19 +556,11 @@
 								</div>
 								<div class="graph-view-placeholder">
 									<div class="graph-view-container">
-										<div class="graph-icon graph-expand" role="button" aria-label="Expand"
-											data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg"
-												width="24" height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2" stroke-linecap="round"
-												stroke-linejoin="round" class="svg-icon">
+										<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
 												<line x1="7" y1="17" x2="17" y2="7"></line>
 												<polyline points="7 7 17 7 17 17"></polyline>
 											</svg></div>
-										<div class="graph-icon graph-global" role="button" aria-label="Global Graph"
-											data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg"
-												width="24" height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2" stroke-linecap="round"
-												stroke-linejoin="round" class="svg-icon lucide-git-fork">
+										<div class="graph-icon graph-global" role="button" aria-label="Global Graph" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-git-fork">
 												<circle cx="12" cy="18" r="3"></circle>
 												<circle cx="6" cy="6" r="3"></circle>
 												<circle cx="18" cy="6" r="3"></circle>
@@ -679,95 +573,39 @@
 							</div>
 							<div id="outline" class=" tree-container">
 								<div class="feature-header">
-									<div class="feature-title">Содержание</div><button
-										class="clickable-icon nav-action-button tree-collapse-all"
-										aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-											height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-											stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round"></svg></button>
+									<div class="feature-title">Содержание</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
 								</div>
-								<div class="tree-item mod-collapsible" data-depth="1"><a
-										class="tree-item-self is-clickable mod-collapsible"
-										href="index.html#Начальная_страница_0" data-path="#Начальная_страница_0">
-										<div class="tree-item-icon collapse-icon"><svg
-												xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-												stroke-linecap="round" stroke-linejoin="round"
-												class="svg-icon right-triangle">
+								<div class="tree-item mod-collapsible" data-depth="1"><a class="tree-item-self is-clickable mod-collapsible" href="index.html#Начальная_страница_0" data-path="#Начальная_страница_0">
+										<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 												<path d="M3 8L12 17L21 8"></path>
 											</svg></div>
-										<div class="tree-item-inner heading-link" heading-name="Начальная страница">
-											Начальная страница</div>
+										<div class="tree-item-inner heading-link" heading-name="Начальная страница">Начальная страница</div>
 									</a>
 									<div class="tree-item-children">
-										<div class="tree-item mod-collapsible" data-depth="2"><a
-												class="tree-item-self is-clickable mod-collapsible"
-												href="index.html#Общие_правила_0" data-path="#Общие_правила_0">
-												<div class="tree-item-icon collapse-icon"><svg
-														xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-														viewBox="0 0 24 24" fill="none" stroke="currentColor"
-														stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-														class="svg-icon right-triangle">
+										<div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable mod-collapsible" href="index.html#Общие_правила_0" data-path="#Общие_правила_0">
+												<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 														<path d="M3 8L12 17L21 8"></path>
 													</svg></div>
-												<div class="tree-item-inner heading-link" heading-name="Общие правила">
-													Общие правила</div>
+												<div class="tree-item-inner heading-link" heading-name="Общие правила">Общие правила</div>
 											</a>
 											<div class="tree-item-children">
-												<div class="tree-item" data-depth="3"><a
-														class="tree-item-self is-clickable"
-														href="index.html#Классы_персонажей_0"
-														data-path="#Классы_персонажей_0">
-														<div class="tree-item-inner heading-link"
-															heading-name="Классы персонажей">Классы персонажей</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="index.html#Классы_персонажей_0" data-path="#Классы_персонажей_0">
+														<div class="tree-item-inner heading-link" heading-name="Классы персонажей">Классы персонажей</div>
 													</a>
 													<div class="tree-item-children"></div>
 												</div>
-												<div class="tree-item" data-depth="3"><a
-														class="tree-item-self is-clickable"
-														href="index.html#Используемые_опциональные_правила_0"
-														data-path="#Используемые_опциональные_правила_0">
-														<div class="tree-item-inner heading-link"
-															heading-name="Используемые опциональные правила">
-															Используемые опциональные правила</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="index.html#Используемые_опциональные_правила_0" data-path="#Используемые_опциональные_правила_0">
+														<div class="tree-item-inner heading-link" heading-name="Используемые опциональные правила">Используемые опциональные правила</div>
 													</a>
 													<div class="tree-item-children"></div>
 												</div>
-												<div class="tree-item" data-depth="3"><a
-														class="tree-item-self is-clickable"
-														href="index.html#Правила_из_сторонних_источников_0"
-														data-path="#Правила_из_сторонних_источников_0">
-														<div class="tree-item-inner heading-link"
-															heading-name="Правила из сторонних источников">Правила из
-															сторонних источников</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="index.html#Правила_из_сторонних_источников_0" data-path="#Правила_из_сторонних_источников_0">
+														<div class="tree-item-inner heading-link" heading-name="Правила из сторонних источников">Правила из сторонних источников</div>
 													</a>
 													<div class="tree-item-children"></div>
 												</div>
-												<div class="tree-item" data-depth="3"><a
-														class="tree-item-self is-clickable" href="index.html#Хоумрулы_0"
-														data-path="#Хоумрулы_0">
-														<div class="tree-item-inner heading-link"
-															heading-name="Хоумрулы">Хоумрулы</div>
-													</a>
-													<div class="tree-item-children"></div>
-												</div>
-												<div class="tree-item" data-depth="3"><a
-														class="tree-item-self is-clickable"
-														href="index.html#Опыт_за_исследования_0"
-														data-path="#Опыт_за_исследования_0">
-														<div class="tree-item-inner heading-link"
-															heading-name="Опыт за исследования">Опыт за исследования
-														</div>
-													</a>
-													<div class="tree-item-children"></div>
-												</div>
-												<div class="tree-item" data-depth="3"><a
-														class="tree-item-self is-clickable"
-														href="index.html#Сокровища_и_богатство_0"
-														data-path="#Сокровища_и_богатство_0">
-														<div class="tree-item-inner heading-link"
-															heading-name="Сокровища и богатство">Сокровища и богатство
-														</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="index.html#Хоумрулы_0" data-path="#Хоумрулы_0">
+														<div class="tree-item-inner heading-link" heading-name="Хоумрулы">Хоумрулы</div>
 													</a>
 													<div class="tree-item-children"></div>
 												</div>
@@ -778,8 +616,7 @@
 							</div>
 						</div>
 					</div>
-					<script
-						defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
+					<script defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
 				</div>
 			</div>
 		</div>

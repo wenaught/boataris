@@ -13,26 +13,19 @@
 	<meta property="og:image" content="undefined">
 	<meta charset="UTF-8">
 	<meta property="og:site_name" content="Боатарис: Открытый стол">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
-	<script async="" id="webpage-script" src="site-lib/scripts/webpage.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js"
-		onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+	<script async="" id="webpage-script" src="site-lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
 	<link rel="icon" href="site-lib/media/favicon.png">
 	<link rel="stylesheet" href="site-lib/styles/obsidian.css">
-	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/other-plugins.css">
 	</noscript>
-	<link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/global-variable-styles.css">
 	</noscript>
-	<link rel="preload" href="site-lib/styles/main-styles.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'"><noscript>
+	<link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/main-styles.css">
 	</noscript>
 	<style>
@@ -395,13 +388,11 @@
 			border-radius: var(--radius-s)
 		}
 	</style>
-	<script
-		defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
+	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
 <body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
-	<script
-		defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
+	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
 	</div>
@@ -414,17 +405,13 @@
 					<div class="sidebar-topbar">
 						<div class="topbar-content">
 							<div id="search-container">
-								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false"
-										placeholder="Поиск...">
+								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Поиск...">
 									<div aria-label="Clear search" id="search-clear-button"></div>
 								</div>
 							</div>
 						</div>
-						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg"
-								width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path
-									d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
 								</path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
@@ -437,13 +424,11 @@
 							<link itemprop="include" href="site-lib/html/file-tree-content.html">
 						</div>
 					</div>
-					<script
-						defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
+					<script defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
 				</div>
 			</div>
 			<div id="center-content" class="leaf">
-				<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties"
-					data-type="markdown">
+				<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown">
 					<style id="MJX-CHTML-styles"></style>
 					<div class="markdown-preview-sizer markdown-preview-section">
 						<div class="header">
@@ -458,11 +443,7 @@
 								человека найти невозможно.</p>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Данувийцы" dir="auto" class="heading" id="Данувийцы_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Данувийцы" dir="auto" class="heading" id="Данувийцы_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Данувийцы</h2>
 						</div>
@@ -470,20 +451,11 @@
 							<p dir="auto"><strong>Язык:</strong> данувийский.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Народ, населяющий территорию вдоль реки Морброз, впадающей в <a
-									data-href="Высокое море" href="мир-боатариса/природные-объекты/высокое-море.html"
-									class="internal-link" target="_self" rel="noopener nofollow">Высокое море</a>.
-								Данувийцы первыми из людей освоили обширную степь к югу от <a
-									data-tooltip-position="top" aria-label="Перволесье" data-href="Перволесье"
-									href="мир-боатариса/природные-объекты/перволесье.html" class="internal-link"
-									target="_self" rel="noopener nofollow">Перволесья</a>.</p>
+							<p dir="auto">Народ, населяющий территорию вдоль реки Морброз, впадающей в <a data-href="Высокое море" href="мир-боатариса/природные-объекты/высокое-море.html" class="internal-link" target="_self" rel="noopener nofollow">Высокое море</a>.
+								Данувийцы первыми из людей освоили обширную степь к югу от <a data-tooltip-position="top" aria-label="Перволесье" data-href="Перволесье" href="мир-боатариса/природные-объекты/перволесье.html" class="internal-link" target="_self" rel="noopener nofollow">Перволесья</a>.</p>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Каульды" dir="auto" class="heading" id="Каульды_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Каульды" dir="auto" class="heading" id="Каульды_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Каульды</h2>
 						</div>
@@ -497,11 +469,7 @@
 								сталкивающиеся с морозами зимой.</p>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Кельваны" dir="auto" class="heading" id="Кельваны_0"><span
-									class="heading-collapse-indicator collapse-indicator collapse-icon"><svg
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Кельваны" dir="auto" class="heading" id="Кельваны_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
 									</svg></span>Кельваны</h2>
 						</div>
@@ -510,10 +478,7 @@
 						</div>
 						<div class="el-p">
 							<p dir="auto">Потомки каульдов, покинувшие полуостров Сарбук и обосновавшиеся по течению
-								реки Гиллалин. Первые люди, восставшие против <a data-tooltip-position="top"
-									aria-label="Эльфы &gt; Талейри" data-href="Эльфы#Талейри"
-									href="мир-боатариса/народы/эльфы.html#Талейри" class="internal-link" target="_self"
-									rel="noopener nofollow">талейри</a>.</p>
+								реки Гиллалин. Первые люди, восставшие против <a data-tooltip-position="top" aria-label="Эльфы &gt; Талейри" data-href="Эльфы#Талейри" href="мир-боатариса/народы/эльфы.html#Талейри" class="internal-link" target="_self" rel="noopener nofollow">талейри</a>.</p>
 						</div>
 						<div></div>
 						<div class="footer">
@@ -526,15 +491,11 @@
 				<div id="right-sidebar" class="sidebar">
 					<div class="sidebar-handle"></div>
 					<div class="sidebar-topbar">
-						<div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input"
-								id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
+						<div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input" id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
 								<div class="toggle-background"></div>
 							</label></div>
-						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg"
-								width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path
-									d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
 								</path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
@@ -550,19 +511,11 @@
 								</div>
 								<div class="graph-view-placeholder">
 									<div class="graph-view-container">
-										<div class="graph-icon graph-expand" role="button" aria-label="Expand"
-											data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg"
-												width="24" height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2" stroke-linecap="round"
-												stroke-linejoin="round" class="svg-icon">
+										<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
 												<line x1="7" y1="17" x2="17" y2="7"></line>
 												<polyline points="7 7 17 7 17 17"></polyline>
 											</svg></div>
-										<div class="graph-icon graph-global" role="button" aria-label="Global Graph"
-											data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg"
-												width="24" height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2" stroke-linecap="round"
-												stroke-linejoin="round" class="svg-icon lucide-git-fork">
+										<div class="graph-icon graph-global" role="button" aria-label="Global Graph" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-git-fork">
 												<circle cx="12" cy="18" r="3"></circle>
 												<circle cx="6" cy="6" r="3"></circle>
 												<circle cx="18" cy="6" r="3"></circle>
@@ -575,46 +528,27 @@
 							</div>
 							<div id="outline" class=" tree-container">
 								<div class="feature-header">
-									<div class="feature-title">Содержание</div><button
-										class="clickable-icon nav-action-button tree-collapse-all"
-										aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-											height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-											stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round"></svg></button>
+									<div class="feature-title">Содержание</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
 								</div>
-								<div class="tree-item mod-collapsible" data-depth="1"><a
-										class="tree-item-self is-clickable mod-collapsible"
-										href="мир-боатариса/народы/люди.html#Люди_0" data-path="#Люди_0">
-										<div class="tree-item-icon collapse-icon"><svg
-												xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-												stroke-linecap="round" stroke-linejoin="round"
-												class="svg-icon right-triangle">
+								<div class="tree-item mod-collapsible" data-depth="1"><a class="tree-item-self is-clickable mod-collapsible" href="мир-боатариса/народы/люди.html#Люди_0" data-path="#Люди_0">
+										<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 												<path d="M3 8L12 17L21 8"></path>
 											</svg></div>
 										<div class="tree-item-inner heading-link" heading-name="Люди">Люди</div>
 									</a>
 									<div class="tree-item-children">
-										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable"
-												href="мир-боатариса/народы/люди.html#Данувийцы_0"
-												data-path="#Данувийцы_0">
-												<div class="tree-item-inner heading-link" heading-name="Данувийцы">
-													Данувийцы</div>
+										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="мир-боатариса/народы/люди.html#Данувийцы_0" data-path="#Данувийцы_0">
+												<div class="tree-item-inner heading-link" heading-name="Данувийцы">Данувийцы</div>
 											</a>
 											<div class="tree-item-children"></div>
 										</div>
-										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable"
-												href="мир-боатариса/народы/люди.html#Каульды_0" data-path="#Каульды_0">
-												<div class="tree-item-inner heading-link" heading-name="Каульды">Каульды
-												</div>
+										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="мир-боатариса/народы/люди.html#Каульды_0" data-path="#Каульды_0">
+												<div class="tree-item-inner heading-link" heading-name="Каульды">Каульды</div>
 											</a>
 											<div class="tree-item-children"></div>
 										</div>
-										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable"
-												href="мир-боатариса/народы/люди.html#Кельваны_0"
-												data-path="#Кельваны_0">
-												<div class="tree-item-inner heading-link" heading-name="Кельваны">
-													Кельваны</div>
+										<div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="мир-боатариса/народы/люди.html#Кельваны_0" data-path="#Кельваны_0">
+												<div class="tree-item-inner heading-link" heading-name="Кельваны">Кельваны</div>
 											</a>
 											<div class="tree-item-children"></div>
 										</div>
@@ -623,8 +557,7 @@
 							</div>
 						</div>
 					</div>
-					<script
-						defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
+					<script defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
 				</div>
 			</div>
 		</div>
