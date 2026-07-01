@@ -18,6 +18,9 @@
 	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
 	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
 	<link rel="icon" href="site-lib/media/favicon.png">
+	<link rel="preload" href="site-lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
+		<link rel="stylesheet" href="site-lib/styles/snippets.css">
+	</noscript>
 	<link rel="stylesheet" href="site-lib/styles/obsidian.css">
 	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
 		<link rel="stylesheet" href="site-lib/styles/other-plugins.css">
@@ -391,7 +394,7 @@
 	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
-<body class="publish css-settings-manager is-focused styled-scrollbars show-inline-title show-ribbon">
+<body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
 	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
@@ -459,7 +462,7 @@
 									<tr>
 										<td dir="ltr"><a data-href="Бард" href="правила-игры/персонажи/классы/бард.html" class="internal-link" target="_self" rel="noopener nofollow">Бард</a></td>
 										<td dir="ltr">1d4, без щита</td>
-										<td dir="ltr">1d4 дважды по <a data-tooltip-position="top" aria-label="^bard" data-href="#^bard" href="#^bard" class="internal-link" target="_self" rel="noopener nofollow">таблице барда</a></td>
+										<td dir="ltr">1d4 дважды по таблице барда</td>
 										<td dir="ltr">Музыкальный инструмент</td>
 									</tr>
 									<tr>
@@ -471,7 +474,7 @@
 									<tr>
 										<td dir="ltr"><a data-href="Дварф" href="правила-игры/персонажи/классы/дварф.html" class="internal-link" target="_self" rel="noopener nofollow">Дварф</a></td>
 										<td dir="ltr">1d6</td>
-										<td dir="ltr">1d12 дважды</td>
+										<td dir="ltr">1d10 дважды по таблице дварфа</td>
 										<td dir="auto"></td>
 									</tr>
 									<tr>
@@ -546,7 +549,7 @@
 									</tr>
 									<tr>
 										<td dir="auto">2</td>
-										<td dir="ltr">Арбалет, 20 болтов</td>
+										<td dir="ltr">Легкий арбалет, 20 болтов</td>
 									</tr>
 									<tr>
 										<td dir="auto">3</td>
@@ -586,6 +589,86 @@
 									</tr>
 									<tr>
 										<td dir="auto">12</td>
+										<td dir="ltr">Боевой молот</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="el-table" dir="ltr" style="overflow-x: auto;">
+							<table>
+								<thead>
+									<tr>
+										<th dir="ltr">1d4</th>
+										<th dir="ltr">Оружие барда</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td dir="auto">1</td>
+										<td dir="ltr">Легкий арбалет, 20 болтов</td>
+									</tr>
+									<tr>
+										<td dir="auto">2</td>
+										<td dir="ltr">Короткий меч</td>
+									</tr>
+									<tr>
+										<td dir="auto">3</td>
+										<td dir="ltr">Праща, 20 камней</td>
+									</tr>
+									<tr>
+										<td dir="auto">4</td>
+										<td dir="ltr">Длинный меч</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="el-table" dir="ltr" style="overflow-x: auto;">
+							<table>
+								<thead>
+									<tr>
+										<th dir="ltr">1d12</th>
+										<th dir="ltr">Оружие дварфа</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td dir="auto">1</td>
+										<td dir="ltr">Боевой топор</td>
+									</tr>
+									<tr>
+										<td dir="auto">2</td>
+										<td dir="ltr">Легкий арбалет, 20 болтов</td>
+									</tr>
+									<tr>
+										<td dir="auto">3</td>
+										<td dir="ltr">Ручной топорик</td>
+									</tr>
+									<tr>
+										<td dir="auto">4</td>
+										<td dir="ltr">Булава</td>
+									</tr>
+									<tr>
+										<td dir="auto">5</td>
+										<td dir="ltr">Короткий лук, 20 стрел</td>
+									</tr>
+									<tr>
+										<td dir="auto">6</td>
+										<td dir="ltr">Короткий меч</td>
+									</tr>
+									<tr>
+										<td dir="auto">7</td>
+										<td dir="ltr">Серебряный кинжал</td>
+									</tr>
+									<tr>
+										<td dir="auto">8</td>
+										<td dir="ltr">Праща, 20 камней</td>
+									</tr>
+									<tr>
+										<td dir="auto">9</td>
+										<td dir="ltr">Длинный меч</td>
+									</tr>
+									<tr>
+										<td dir="auto">10</td>
 										<td dir="ltr">Боевой молот</td>
 									</tr>
 								</tbody>
@@ -647,34 +730,6 @@
 									<tr>
 										<td dir="auto">12</td>
 										<td dir="ltr">Волчий аконит (1 гроздь)</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="el-table" dir="ltr" style="overflow-x: auto;">
-							<table>
-								<thead>
-									<tr>
-										<th dir="ltr">1d4</th>
-										<th dir="ltr">Оружие барда</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td dir="auto">1</td>
-										<td dir="ltr">Арбалет, 20 болтов</td>
-									</tr>
-									<tr>
-										<td dir="auto">2</td>
-										<td dir="ltr">Короткий меч</td>
-									</tr>
-									<tr>
-										<td dir="auto">3</td>
-										<td dir="ltr">Праща, 20 камней</td>
-									</tr>
-									<tr>
-										<td dir="auto">4</td>
-										<td dir="ltr">Длинный меч</td>
 									</tr>
 								</tbody>
 							</table>
