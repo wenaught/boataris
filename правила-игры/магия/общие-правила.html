@@ -391,7 +391,7 @@
 	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
-<body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
+<body class="publish css-settings-manager is-focused styled-scrollbars show-inline-title show-ribbon">
 	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
@@ -411,8 +411,7 @@
 							</div>
 						</div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>
@@ -435,18 +434,15 @@
 							<h1 class="page-title heading inline-title" id="Общие_правила_0">Общие правила</h1>
 							<div class="data-bar"></div>
 						</div>
-						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;">
-						</div>
+						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
 						<div class="el-p">
 							<p dir="auto">Данные правила относятся ко всем видам магии.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Список заклинаний:</strong> класс персонажа определяет заклинания,
-								которые ему доступны.</p>
+							<p dir="auto"><strong>Список заклинаний:</strong> класс персонажа определяет заклинания, которые ему доступны.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Обратные заклинания:</strong> эффект некоторых заклинаний может быть
-								обращен в противоположную сторону, что указано в описании заклинания.</p>
+							<p dir="auto"><strong>Обратные заклинания:</strong> эффект некоторых заклинаний может быть обращен в противоположную сторону, что указано в описании заклинания.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Сотворение заклинаний" dir="auto" class="heading" id="Сотворение_заклинаний_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -454,43 +450,27 @@
 									</svg></span>Сотворение заклинаний</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Запомненные заклинания могут быть сотворены путём точного воспроизведения
-								жестов и мистических слов.</p>
+							<p dir="auto">Запомненные заклинания могут быть сотворены путём точного воспроизведения жестов и мистических слов.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Без препятствий:</strong> персонаж должен иметь возможность
-								жестикулировать и говорить. Заклинатель не может творить заклинания, если он связан,
-								немой или находится в области магической тишины.</p>
+							<p dir="auto"><strong>Без препятствий:</strong> персонаж должен иметь возможность жестикулировать и говорить. Заклинатель не может творить заклинания, если он связан, немой или находится в области магической тишины.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Область видимости:</strong> если в описании заклинания не сказано
-								обратного, то цель (чудовище, персонаж, объект, место) должна быть видима персонажем.
-							</p>
+							<p dir="auto"><strong>Область видимости:</strong> если в описании заклинания не сказано обратного, то цель (чудовище, персонаж, объект, место) должна быть видима персонажем.</p>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Эффекты заклинаний" dir="auto" class="heading" id="Эффекты_заклинаний_0">
-								<span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Эффекты заклинаний" dir="auto" class="heading" id="Эффекты_заклинаний_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
-									</svg></span>Эффекты заклинаний
-							</h2>
+									</svg></span>Эффекты заклинаний</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Выбор цели:</strong> некоторые заклинания влияют на несколько целей —
-								или в области влияния, или по сумме кубиков здоровья. Если в описании заклинания не
-								сказано каким образом выбираются цели, то рефери решает сам: случайно, по желанию
-								заклинателя и т.д.</p>
+							<p dir="auto"><strong>Выбор цели:</strong> некоторые заклинания влияют на несколько целей — или в области влияния, или по сумме кубиков здоровья. Если в описании заклинания не сказано каким образом выбираются цели, то рефери решает сам: случайно, по желанию заклинателя и т.д.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Концентрация:</strong> некоторые заклинания требуют особой
-								концентрации заклинателя, чтобы поддерживать магический эффект. Если в описании
-								заклинания не сказано другого, то выполнению любых других действий или отвлечение
-								(например будучи атакованным) нарушает концентрацию и заканчивает магический эффект.</p>
+							<p dir="auto"><strong>Концентрация:</strong> некоторые заклинания требуют особой концентрации заклинателя, чтобы поддерживать магический эффект. Если в описании заклинания не сказано другого, то выполнению любых других действий или отвлечение (например будучи атакованным) нарушает концентрацию и заканчивает магический эффект.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Накапливающиеся эффекты:</strong> несколько заклинаний не могут
-								повышать или понижать одни и те же характеристики, бонусы атаки, КБ, урон, испытания и
-								т.д. Заклинания, влияющие на разные характеристики, могут быть сотворены на одну цель.
-								Эффект заклинаний может складываться с эффектами волшебных вещей.</p>
+							<p dir="auto"><strong>Накапливающиеся эффекты:</strong> несколько заклинаний не могут повышать или понижать одни и те же характеристики, бонусы атаки, КБ, урон, испытания и т.д. Заклинания, влияющие на разные характеристики, могут быть сотворены на одну цель. Эффект заклинаний может складываться с эффектами волшебных вещей.</p>
 						</div>
 						<div class="footer">
 							<div class="data-bar"></div>
@@ -506,8 +486,7 @@
 								<div class="toggle-background"></div>
 							</label></div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>

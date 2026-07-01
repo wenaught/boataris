@@ -391,7 +391,7 @@
 	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
-<body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
+<body class="publish css-settings-manager is-focused styled-scrollbars show-inline-title show-ribbon">
 	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
@@ -405,14 +405,13 @@
 					<div class="sidebar-topbar">
 						<div class="topbar-content">
 							<div id="search-container">
-								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Поиск...">
+								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search...">
 									<div aria-label="Clear search" id="search-clear-button"></div>
 								</div>
 							</div>
 						</div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>
@@ -435,12 +434,9 @@
 							<h1 class="page-title heading inline-title" id="Люди_0">Люди</h1>
 							<div class="data-bar"></div>
 						</div>
-						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;">
-						</div>
+						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
 						<div class="el-p">
-							<p dir="auto">Люди - самые многочисленные разумные существа на северо-востоке Боатариса. Им
-								свойственна амбициозность и гибкость, а также самое большое разнообразие — "типичного"
-								человека найти невозможно.</p>
+							<p dir="auto">Люди - самые многочисленные разумные существа на северо-востоке Боатариса. Им свойственна амбициозность и гибкость, а также самое большое разнообразие — "типичного" человека найти невозможно.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Данувийцы" dir="auto" class="heading" id="Данувийцы_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -451,8 +447,7 @@
 							<p dir="auto"><strong>Язык:</strong> данувийский.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Народ, населяющий территорию вдоль реки Морброз, впадающей в <a data-href="Высокое море" href="мир-боатариса/природные-объекты/высокое-море.html" class="internal-link" target="_self" rel="noopener nofollow">Высокое море</a>.
-								Данувийцы первыми из людей освоили обширную степь к югу от <a data-tooltip-position="top" aria-label="Перволесье" data-href="Перволесье" href="мир-боатариса/природные-объекты/перволесье.html" class="internal-link" target="_self" rel="noopener nofollow">Перволесья</a>.</p>
+							<p dir="auto">Народ, населяющий территорию вдоль реки Морброз, впадающей в <a data-href="Высокое море" href="мир-боатариса/природные-объекты/высокое-море.html" class="internal-link" target="_self" rel="noopener nofollow">Высокое море</a>. Данувийцы первыми из людей освоили обширную степь к югу от <a data-tooltip-position="top" aria-label="Перволесье" data-href="Перволесье" href="мир-боатариса/природные-объекты/перволесье.html" class="internal-link" target="_self" rel="noopener nofollow">Перволесья</a>.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Каульды" dir="auto" class="heading" id="Каульды_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -460,13 +455,10 @@
 									</svg></span>Каульды</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Язык:</strong> множество отдельных наречий, совокупно называемых
-								каульдскими.</p>
+							<p dir="auto"><strong>Язык:</strong> множество отдельных наречий, совокупно называемых каульдскими.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Гордые жители полуострова Сарбук, расположенного между Волчьим когтем и
-								Высоким морем. Единственные из жителей восточной окраины континента, постоянно
-								сталкивающиеся с морозами зимой.</p>
+							<p dir="auto">Гордые жители полуострова Сарбук, расположенного между Волчьим когтем и Высоким морем. Единственные из жителей восточной окраины континента, постоянно сталкивающиеся с морозами зимой.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Кельваны" dir="auto" class="heading" id="Кельваны_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -477,8 +469,7 @@
 							<p dir="auto"><strong>Язык:</strong> кельванский.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Потомки каульдов, покинувшие полуостров Сарбук и обосновавшиеся по течению
-								реки Гиллалин. Первые люди, восставшие против <a data-tooltip-position="top" aria-label="Эльфы &gt; Талейри" data-href="Эльфы#Талейри" href="мир-боатариса/народы/эльфы.html#Талейри" class="internal-link" target="_self" rel="noopener nofollow">талейри</a>.</p>
+							<p dir="auto">Потомки каульдов, покинувшие полуостров Сарбук и обосновавшиеся по течению реки Гиллалин. Первые люди, восставшие против <a data-tooltip-position="top" aria-label="Эльфы &gt; Талейри" data-href="Эльфы#Талейри" href="мир-боатариса/народы/эльфы.html#Талейри" class="internal-link" target="_self" rel="noopener nofollow">талейри</a>.</p>
 						</div>
 						<div></div>
 						<div class="footer">
@@ -495,8 +486,7 @@
 								<div class="toggle-background"></div>
 							</label></div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>

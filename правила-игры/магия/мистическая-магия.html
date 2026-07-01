@@ -391,7 +391,7 @@
 	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
-<body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
+<body class="publish css-settings-manager is-focused styled-scrollbars show-inline-title show-ribbon">
 	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
@@ -411,8 +411,7 @@
 							</div>
 						</div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>
@@ -435,11 +434,9 @@
 							<h1 class="page-title heading inline-title" id="Мистическая_магия_0">Мистическая магия</h1>
 							<div class="data-bar"></div>
 						</div>
-						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;">
-						</div>
+						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
 						<div class="el-p">
-							<p dir="auto">Мистическая магия — результат многовековых трудов множества учёных-магов,
-								посвятивших свои жизни исследованию окружающего мира.</p>
+							<p dir="auto">Мистическая магия — результат многовековых трудов множества учёных-магов, посвятивших свои жизни исследованию окружающего мира.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Сотворение мистических заклинаний" dir="auto" class="heading" id="Сотворение_мистических_заклинаний_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -447,8 +444,7 @@
 									</svg></span>Сотворение мистических заклинаний</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Маг может произнести заклинание однократно: после сотворения оно стирается из
-								разума заклинателя до того, пока не будет запомнено снова.</p>
+							<p dir="auto">Маг может произнести заклинание однократно: после сотворения оно стирается из разума заклинателя до того, пока не будет запомнено снова.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Запоминание мистических заклинаний" dir="auto" class="heading" id="Запоминание_мистических_заклинаний_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -456,19 +452,13 @@
 									</svg></span>Запоминание мистических заклинаний</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Маги запоминают заклинания из волшебных гримуаров и ограничены в выборе теми
-								заклинаниями, что записаны в их книге. Уровень мага определяет число заклинаний, которые
-								он может единовременно запомнить.</p>
+							<p dir="auto">Маги запоминают заклинания из волшебных гримуаров и ограничены в выборе теми заклинаниями, что записаны в их книге. Уровень мага определяет число заклинаний, которые он может единовременно запомнить.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Требования ко времени и отдыху:</strong> заклинатель может запомнить
-								новые заклинания после непрерывного ночного сна. Для запоминания доступных заклинаний
-								требуется один час.</p>
+							<p dir="auto"><strong>Требования ко времени и отдыху:</strong> заклинатель может запомнить новые заклинания после непрерывного ночного сна. Для запоминания доступных заклинаний требуется один час.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto"><strong>Копии заклинаний:</strong> персонаж может запомнить одно заклинание
-								несколько раз, пока у него остается возможность запоминать заклинания соответствующего
-								круга.</p>
+							<p dir="auto"><strong>Копии заклинаний:</strong> персонаж может запомнить одно заклинание несколько раз, пока у него остается возможность запоминать заклинания соответствующего круга.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Обратные мистические заклинания" dir="auto" class="heading" id="Обратные_мистические_заклинания_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -476,8 +466,7 @@
 									</svg></span>Обратные мистические заклинания</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Во время запоминания требуется выбрать форму заклинания — обычную или
-								обратную. Маг может запомнить обе формы одновременно, но как разные заклинания.</p>
+							<p dir="auto">Во время запоминания требуется выбрать форму заклинания — обычную или обратную. Маг может запомнить обе формы одновременно, но как разные заклинания.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Гримуары" dir="auto" class="heading" id="Гримуары_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -498,8 +487,7 @@
 									</svg></span>Начальные заклинания</h3>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Маги начинают игру с количеством заклинаний, определяемым их ИНТ, как указано
-								в таблице ниже. Рефери может выбрать эти заклинания или предложить выбор игроку.</p>
+							<p dir="auto">Маги начинают игру с количеством заклинаний, определяемым их ИНТ, как указано в таблице ниже. Рефери может выбрать эти заклинания или предложить выбор игроку.</p>
 						</div>
 						<div class="el-h3">
 							<h3 data-heading="Добавление заклинаний" dir="auto" class="heading" id="Добавление_заклинаний_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -511,13 +499,8 @@
 						</div>
 						<div class="el-ul">
 							<ul class="has-list-bullet">
-								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Копирование:</strong> заклинания того круга,
-									который доступен персонажу, могут быть скопированы из другого источника, например,
-									свитка или гримуара другого заклинателя. Шанс успеха зависит от ИНТ копирующего
-									персонажа, как указано в таблице ниже. Если бросок провален, персонаж никогда не
-									сможет выучить это заклинание.</li>
-								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Исследование:</strong> также возможно
-									добавить заклинание в гримуар магическими изысканиями.</li>
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Копирование:</strong> заклинания того круга, который доступен персонажу, могут быть скопированы из другого источника, например, свитка или гримуара другого заклинателя. Шанс успеха зависит от ИНТ копирующего персонажа, как указано в таблице ниже. Если бросок провален, персонаж никогда не сможет выучить это заклинание.</li>
+								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Исследование:</strong> также возможно добавить заклинание в гримуар магическими изысканиями.</li>
 							</ul>
 						</div>
 						<div class="el-table" dir="ltr" style="overflow-x: auto;">
@@ -584,18 +567,12 @@
 									</svg></span>Потеря гримуара</h3>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Маг может заново записать заклинания из потерянного или уничтоженного
-								гримуара:</p>
+							<p dir="auto">Маг может заново записать заклинания из потерянного или уничтоженного гримуара:</p>
 						</div>
 						<div class="el-ul">
 							<ul class="has-list-bullet">
-								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Цена:</strong>
-									цена восстановления одного заклинания: 1&nbsp;000 зм и 1 неделя игрового времени за
-									круг заклинания. Например восстановление двух заклинаний первого круга и одного
-									второго круга будет стоить 4&nbsp;000 зм и 4 недель.</li>
-								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Процесс
-										восстановления:</strong> восстановление требует полной концентрации. Во время
-									периода записи утраченных заклинаний персонаж не может заниматься ничем другим.</li>
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Цена:</strong> цена восстановления одного заклинания: 1&nbsp;000 зм и 1 неделя игрового времени за круг заклинания. Например восстановление двух заклинаний первого круга и одного второго круга будет стоить 4&nbsp;000 зм и 4 недель.</li>
+								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Процесс восстановления:</strong> восстановление требует полной концентрации. Во время периода записи утраченных заклинаний персонаж не может заниматься ничем другим.</li>
 							</ul>
 						</div>
 						<div class="el-h3">
@@ -604,8 +581,7 @@
 									</svg></span>Чужие гримуары</h3>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Каждый гримуар составлен таким образом, что только мистический заклинатель,
-								написавший его, может прочесть заклинания из гримуара без использования магии.</p>
+							<p dir="auto">Каждый гримуар составлен таким образом, что только мистический заклинатель, написавший его, может прочесть заклинания из гримуара без использования магии.</p>
 						</div>
 						<div class="el-h2">
 							<h2 data-heading="Список мистических заклинаний" dir="auto" class="heading" id="Список_мистических_заклинаний_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
@@ -613,8 +589,7 @@
 									</svg></span>Список мистических заклинаний</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Заклинания первого и второго круга доступны <a data-tooltip-position="top" aria-label="https://ose.ruleplaying.com/magic/arcane/arcane-spells/" rel="noopener nofollow" class="external-link is-unresolved" href="https://ose.ruleplaying.com/magic/arcane/arcane-spells/" target="_self">по
-									ссылке</a>.</p>
+							<p dir="auto">Заклинания первого и второго круга доступны <a data-tooltip-position="top" aria-label="https://ose.ruleplaying.com/magic/arcane/arcane-spells/" rel="noopener nofollow" class="external-link is-unresolved" href="https://ose.ruleplaying.com/magic/arcane/arcane-spells/" target="_self">по ссылке</a>.</p>
 						</div>
 						<div class="footer">
 							<div class="data-bar"></div>
@@ -630,8 +605,7 @@
 								<div class="toggle-background"></div>
 							</label></div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>

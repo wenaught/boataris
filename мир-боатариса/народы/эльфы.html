@@ -391,7 +391,7 @@
 	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
 </head>
 
-<body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
+<body class="publish css-settings-manager is-focused styled-scrollbars show-inline-title show-ribbon">
 	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
 	<div class="parsed-feature-container" style="display: contents;">
 		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
@@ -405,14 +405,13 @@
 					<div class="sidebar-topbar">
 						<div class="topbar-content">
 							<div id="search-container">
-								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Поиск...">
+								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search...">
 									<div aria-label="Clear search" id="search-clear-button"></div>
 								</div>
 							</div>
 						</div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>
@@ -435,56 +434,36 @@
 							<h1 class="page-title heading inline-title" id="Эльфы_0">Эльфы</h1>
 							<div class="data-bar"></div>
 						</div>
-						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;">
-						</div>
+						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
 						<div class="el-p">
 							<p dir="auto"><strong>Язык:</strong> талейри, или эльфийский.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Эльфы — существа, отдалённо похожие на людей, впервые замеченные в <a data-href="Перволесье" href="мир-боатариса/природные-объекты/перволесье.html" class="internal-link" target="_self" rel="noopener nofollow">Перволесье</a> <a data-tooltip-position="top" aria-label="Основание Талейриса" data-href="Основание Талейриса" href="мир-боатариса/история/1.-древняя-история/основание-талейриса.html" class="internal-link" target="_self" rel="noopener nofollow">несколько тысяч лет
-									назад</a>.</p>
+							<p dir="auto">Эльфы — существа, отдалённо похожие на людей, впервые замеченные в <a data-href="Перволесье" href="мир-боатариса/природные-объекты/перволесье.html" class="internal-link" target="_self" rel="noopener nofollow">Перволесье</a> <a data-tooltip-position="top" aria-label="Основание Талейриса" data-href="Основание Талейриса" href="мир-боатариса/история/1.-древняя-история/основание-талейриса.html" class="internal-link" target="_self" rel="noopener nofollow">несколько тысяч лет назад</a>.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">Эльфы в большинстве своём невысокие и хрупкие. Среди них почти невозможно
-								определить мужчин и женщин; с точки зрения людей, они все выглядят одинаково — эфемерно,
-								невесомо и чужеродно. Глаза эльфов похожи на кошачьи.<br>
-								Помимо этого, внешность конкретного эльфа меняется со сменой сезонов и с переменой
-								окружения: те, что живут в лесах, становятся похожими на деревья, с кожей, похожей на
-								кору, и волосами, меняющими цвет с наступлением осени.</p>
+							<p dir="auto">Эльфы в большинстве своём невысокие и хрупкие. Среди них почти невозможно определить мужчин и женщин; с точки зрения людей, они все выглядят одинаково — эфемерно, невесомо и чужеродно. Глаза эльфов похожи на кошачьи.<br>
+								Помимо этого, внешность конкретного эльфа меняется со сменой сезонов и с переменой окружения: те, что живут в лесах, становятся похожими на деревья, с кожей, похожей на кору, и волосами, меняющими цвет с наступлением осени.</p>
 						</div>
 						<div class="el-p">
-							<p dir="auto">В отличие от людей, эльфы способы творить магию, не прибегая к книгам, свиткам
-								или ритуалам. Эта способность позволила Талейрису, первой империи эльфов, быстро
-								завоевать огромные территории от озера Эорант до побережья Высокого моря. По неизвестной
-								причине эльфы отступили с завоеванных земель на заре эпохи людей, спустя почти две
-								тысячи лет после расцвета империи.</p>
+							<p dir="auto">В отличие от людей, эльфы способы творить магию, не прибегая к книгам, свиткам или ритуалам. Эта способность позволила Талейрису, первой империи эльфов, быстро завоевать огромные территории от озера Эорант до побережья Высокого моря. По неизвестной причине эльфы отступили с завоеванных земель на заре эпохи людей, спустя почти две тысячи лет после расцвета империи.</p>
 						</div>
 						<div class="el-p">
 							<p dir="auto">В настоящее время, эльфы разделены на две группы:</p>
 						</div>
 						<div class="el-ul">
 							<ul class="has-list-bullet">
-								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Талейри</strong>,
-									первые, "истинные" эльфы, основатели империи и волшебники невероятной силы, ныне
-									живущие в недрах Перволесья, вокруг огромного <a data-tooltip-position="top" aria-label="Озеро Эорант" data-href="Озеро Эорант" href="мир-боатариса/природные-объекты/озеро-эорант.html" class="internal-link" target="_self" rel="noopener nofollow">озера Эорант</a>.</li>
-								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Тариальве</strong>, что на языке эльфов
-									означает "предатели", — эльфы, оставшиеся на людских землях.</li>
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Талейри</strong>, первые, "истинные" эльфы, основатели империи и волшебники невероятной силы, ныне живущие в недрах Перволесья, вокруг огромного <a data-tooltip-position="top" aria-label="Озеро Эорант" data-href="Озеро Эорант" href="мир-боатариса/природные-объекты/озеро-эорант.html" class="internal-link" target="_self" rel="noopener nofollow">озера Эорант</a>.</li>
+								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Тариальве</strong>, что на языке эльфов означает "предатели", — эльфы, оставшиеся на людских землях.</li>
 							</ul>
 						</div>
 						<div class="el-h2">
-							<h2 data-heading="Эльфы среди людей" dir="auto" class="heading" id="Эльфы_среди_людей_0">
-								<span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+							<h2 data-heading="Эльфы среди людей" dir="auto" class="heading" id="Эльфы_среди_людей_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
 										<path d="M3 8L12 17L21 8"></path>
-									</svg></span>Эльфы среди людей
-							</h2>
+									</svg></span>Эльфы среди людей</h2>
 						</div>
 						<div class="el-p">
-							<p dir="auto">На территориях, с которых Талейрис отступил, остались немногочисленные
-								тариальве, живущие в основном как отшельники. Изменчивая природа эльфов сделала их
-								похожими на людей, и только по глазам можно определить, что за существо на самом деле
-								перед тобой. Некоторые из тариальве остались среди людей и даже обзавелись семьями. Дети
-								от браков людей и эльфов всегда рождаются эльфами, хоть и с каждым поколением всё менее
-								способными к магии.</p>
+							<p dir="auto">На территориях, с которых Талейрис отступил, остались немногочисленные тариальве, живущие в основном как отшельники. Изменчивая природа эльфов сделала их похожими на людей, и только по глазам можно определить, что за существо на самом деле перед тобой. Некоторые из тариальве остались среди людей и даже обзавелись семьями. Дети от браков людей и эльфов всегда рождаются эльфами, хоть и с каждым поколением всё менее способными к магии.</p>
 						</div>
 						<div></div>
 						<div class="footer">
@@ -501,8 +480,7 @@
 								<div class="toggle-background"></div>
 							</label></div>
 						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z">
-								</path>
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
 								<path d="M10 4V20"></path>
 								<path d="M4 7H7"></path>
 								<path d="M4 10H7"></path>
