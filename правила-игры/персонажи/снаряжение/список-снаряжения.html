@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Список снаряжения</title>
+	<base href="../../..">
+	<meta name="pathname" content="правила-игры/персонажи/снаряжение/список-снаряжения.html">
+	<meta name="description" content="Боатарис: Открытый стол - Список снаряжения">
+	<meta property="og:title" content="Список снаряжения">
+	<meta property="og:description" content="Боатарис: Открытый стол - Список снаряжения">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="правила-игры/персонажи/снаряжение/список-снаряжения.html">
+	<meta property="og:image" content="undefined">
+	<meta charset="UTF-8">
+	<meta property="og:site_name" content="Боатарис: Открытый стол">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+	<script async="" id="webpage-script" src="site-lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+	<link rel="icon" href="site-lib/media/favicon.png">
+	<link rel="preload" href="site-lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
+		<link rel="stylesheet" href="site-lib/styles/snippets.css">
+	</noscript>
+	<link rel="stylesheet" href="site-lib/styles/obsidian.css">
+	<link rel="preload" href="site-lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
+		<link rel="stylesheet" href="site-lib/styles/other-plugins.css">
+	</noscript>
+	<link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
+		<link rel="stylesheet" href="site-lib/styles/global-variable-styles.css">
+	</noscript>
+	<link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
+		<link rel="stylesheet" href="site-lib/styles/main-styles.css">
+	</noscript>
+	<style>
+		body {
+			--line-width: 40em;
+			--line-width-adaptive: 40em;
+			--file-line-width: 40em;
+			--sidebar-width: min(20em, 80vw);
+			--collapse-arrow-size: 11px;
+			--tree-vertical-spacing: 1.3em;
+			--sidebar-margin: 12px
+		}
+
+		:root {
+			background-color: #202124
+		}
+
+		.sidebar {
+			height: 100%;
+			font-size: 14px;
+			z-index: 10;
+			min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+			max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+			position: relative;
+			overflow: hidden;
+			overflow: clip;
+			transition: min-width ease-in-out, max-width ease-in-out;
+			transition-duration: .2s;
+			contain: size
+		}
+
+		#left-sidebar {
+			left: 0
+		}
+
+		#right-sidebar {
+			right: 0
+		}
+
+		.sidebar.is-collapsed {
+			min-width: 0;
+			max-width: 0
+		}
+
+		.sidebar.floating {
+			position: absolute
+		}
+
+		.sidebar .leaf-content {
+			height: 100%;
+			min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+			top: 0;
+			padding: var(--sidebar-margin);
+			padding-top: 4em;
+			line-height: var(--line-height-tight);
+			background-color: var(--background-secondary);
+			transition: background-color, border-right, border-left, box-shadow;
+			transition-duration: var(--color-fade-speed);
+			transition-timing-function: ease-in-out;
+			position: absolute;
+			display: flex;
+			flex-direction: column
+		}
+
+		.sidebar:not(.is-collapsed) .leaf-content {
+			min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+			max-width: calc(max(100%, var(--sidebar-width)) - 3px)
+		}
+
+		#left-sidebar-content {
+			left: 0;
+			border-top-right-radius: var(--radius-l);
+			border-bottom-right-radius: var(--radius-l)
+		}
+
+		#right-sidebar-content {
+			right: 0;
+			border-top-left-radius: var(--radius-l);
+			border-bottom-left-radius: var(--radius-l)
+		}
+
+		.sidebar #left-sidebar-content,
+		.sidebar #right-sidebar-content {
+			contain: none !important;
+			container-type: normal !important;
+			animation: none !important
+		}
+
+		.sidebar:has(.leaf-content:empty):has(.topbar-content:empty) {
+			display: none
+		}
+
+		.sidebar-topbar {
+			height: calc(2.3em + 2 * var(--sidebar-margin));
+			width: var(--sidebar-width);
+			padding: var(--sidebar-margin);
+			z-index: 1;
+			position: fixed;
+			display: flex;
+			align-items: center;
+			transition: width ease-in-out;
+			transition-duration: inherit
+		}
+
+		.sidebar.is-collapsed .sidebar-topbar {
+			width: calc(2.3em + var(--sidebar-margin) * 2)
+		}
+
+		.sidebar .sidebar-topbar.is-collapsed {
+			width: 0
+		}
+
+		#left-sidebar .sidebar-topbar {
+			left: 0;
+			flex-direction: row;
+			border-top-right-radius: var(--radius-l)
+		}
+
+		#right-sidebar .sidebar-topbar {
+			right: 0;
+			flex-direction: row-reverse;
+			border-top-left-radius: var(--radius-l)
+		}
+
+		#left-sidebar .topbar-content {
+			margin-right: calc(2.3em + var(--sidebar-margin));
+			flex-direction: row
+		}
+
+		#right-sidebar .topbar-content {
+			margin-left: calc(2.3em + var(--sidebar-margin));
+			flex-direction: row-reverse
+		}
+
+		.topbar-content {
+			overflow: hidden visible;
+			overflow: clip visible;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			transition: inherit
+		}
+
+		.sidebar.is-collapsed .topbar-content {
+			width: 0;
+			transition: inherit
+		}
+
+		.clickable-icon.sidebar-collapse-icon {
+			background-color: transparent;
+			color: var(--icon-color-focused);
+			padding: 2px !important;
+			margin: 0 !important;
+			height: 100% !important;
+			width: 2.3em !important;
+			margin-inline: 0.14em !important;
+			position: absolute
+		}
+
+		#left-sidebar .clickable-icon.sidebar-collapse-icon {
+			transform: rotateY(180deg);
+			right: var(--sidebar-margin)
+		}
+
+		#right-sidebar .clickable-icon.sidebar-collapse-icon {
+			transform: rotateY(180deg);
+			left: var(--sidebar-margin)
+		}
+
+		.clickable-icon.sidebar-collapse-icon svg.svg-icon {
+			width: 100%;
+			height: 100%
+		}
+
+		.feature-title {
+			margin-left: 1px;
+			text-transform: uppercase;
+			letter-spacing: .06em;
+			margin-top: .75em;
+			margin-bottom: .75em
+		}
+
+		.feature-header {
+			display: flex;
+			align-items: center;
+			padding-top: 0;
+			font-size: 1em;
+			padding-left: 0
+		}
+
+		body.floating-sidebars .sidebar {
+			position: absolute
+		}
+
+		body {
+			transition: background-color var(--color-fade-speed) ease-in-out
+		}
+
+		#navbar:not(:empty) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: .5em 1em;
+			width: 100%
+		}
+
+		#main {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			width: 100%;
+			align-items: stretch;
+			justify-content: center
+		}
+
+		#main-horizontal {
+			display: flex;
+			flex-direction: row;
+			flex-grow: 1;
+			width: 100%;
+			align-items: stretch;
+			justify-content: center
+		}
+
+		#center-content {
+			flex-basis: 100%;
+			max-width: 100%;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: opacity .2s ease-in-out;
+			contain: inline-size
+		}
+
+		.hide {
+			opacity: 0 !important;
+			transition: opacity .2s ease-in-out;
+			pointer-events: none
+		}
+
+		#center-content>.obsidian-document {
+			padding-left: 2em;
+			padding-right: 1em;
+			margin-bottom: 0;
+			width: 100%;
+			width: -webkit-fill-available;
+			width: -moz-available;
+			width: fill-available;
+			transition: background-color var(--color-fade-speed) ease-in-out;
+			border-top-right-radius: var(--window-radius, var(--radius-m));
+			border-top-left-radius: var(--window-radius, var(--radius-m));
+			overflow-x: hidden !important;
+			overflow-y: auto !important;
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			contain: inline-size
+		}
+
+		body #center-content>.obsidian-document>.markdown-preview-sizer {
+			padding-bottom: 80vh;
+			width: 100%;
+			max-width: var(--line-width);
+			flex-basis: var(--line-width);
+			transition: background-color var(--color-fade-speed) ease-in-out;
+			contain: inline-size
+		}
+
+		#center-content>.obsidian-document>div {
+			width: 100% !important;
+			transition: background-color var(--color-fade-speed) ease-in-out;
+			contain: inline-size
+		}
+
+		#center-content>.obsidian-document:not([data-type=markdown]).embed {
+			display: flex;
+			padding: 1em;
+			height: 100%;
+			width: 100%;
+			align-items: center;
+			justify-content: center
+		}
+
+		#center-content>.obsidian-document:not([data-type=markdown]).embed>* {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain
+		}
+
+		:not(h1, h2, h3, h4, h5, h6, li):has(> :is(.math, table)) {
+			overflow-x: auto !important
+		}
+
+		#center-content>.obsidian-document:not([data-type=markdown]) {
+			overflow-x: auto;
+			contain: content;
+			padding: 0;
+			margin: 0;
+			height: 100%
+		}
+
+		.obsidian-document[data-type=attachment] {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 100%
+		}
+
+		.obsidian-document[data-type=attachment]>* {
+			outline: 0;
+			border: none;
+			box-shadow: none
+		}
+
+		.obsidian-document[data-type=attachment] :is(img) {
+			max-width: 90%;
+			max-height: 90%;
+			object-fit: contain
+		}
+
+		.obsidian-document[data-type=attachment]>:is(audio) {
+			width: 100%;
+			max-width: min(90%, var(--line-width))
+		}
+
+		.obsidian-document[data-type=attachment]>:is(embed, iframe, video) {
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain
+		}
+
+		.canvas-wrapper>:is(.header, .footer) {
+			z-index: 100;
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			width: 100%;
+			align-items: center
+		}
+
+		.scroll-highlight {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 1000;
+			background-color: hsla(var(--color-accent-hsl), .25);
+			opacity: 0;
+			padding: 1em;
+			inset: 50%;
+			translate: -50% -50%;
+			border-radius: var(--radius-s)
+		}
+	</style>
+	<script defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
+</head>
+
+<body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
+	<script defer="">let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")</script>
+	<div class="parsed-feature-container" style="display: contents;">
+		<link itemprop="include" href="site-lib/html/custom-head-content-content.html">
+	</div>
+	<div id="main">
+		<div id="navbar"></div>
+		<div id="main-horizontal">
+			<div id="left-content" class="leaf" style="--sidebar-width: var(--sidebar-width-left);">
+				<div id="left-sidebar" class="sidebar">
+					<div class="sidebar-handle"></div>
+					<div class="sidebar-topbar">
+						<div class="topbar-content">
+							<div id="search-container">
+								<div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search...">
+									<div aria-label="Clear search" id="search-clear-button"></div>
+								</div>
+							</div>
+						</div>
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+								<path d="M10 4V20"></path>
+								<path d="M4 7H7"></path>
+								<path d="M4 10H7"></path>
+								<path d="M4 13H7"></path>
+							</svg></div>
+					</div>
+					<div class="sidebar-content-wrapper">
+						<div id="left-sidebar-content" class="leaf-content">
+							<link itemprop="include" href="site-lib/html/file-tree-content.html">
+						</div>
+					</div>
+					<script defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
+				</div>
+			</div>
+			<div id="center-content" class="leaf">
+				<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown">
+					<style id="MJX-CHTML-styles"></style>
+					<div class="markdown-preview-sizer markdown-preview-section">
+						<div class="header">
+							<h1 class="page-title heading inline-title" id="Список_снаряжения_0">Список снаряжения</h1>
+							<div class="data-bar"></div>
+						</div>
+						<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+						<div class="el-pre">
+							<pre><code data-line="0">Снаряжение взято из Basic Fantasy Equipment Emporium.
+Цены адаптированы согласно Grain Into Gold.
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+						</div>
+						<div class="el-h2">
+							<h2 data-heading="Оружие" dir="auto" class="heading" id="Оружие_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Оружие</h2>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Стоимость снаряжения" dir="auto" class="heading" id="Стоимость_снаряжения_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Стоимость снаряжения</h3>
+						</div>
+						<div class="el-p">
+							<p dir="auto">В таблицах ниже указана стоимость покупки предмета у непосредственного изготовителя; эти цены используются для покупки стартового снаряжения, но реальная стоимость товара может меняться в зависимости от места приобретения.</p>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Размер оружия" dir="auto" class="heading" id="Размер_оружия_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Размер оружия</h3>
+						</div>
+						<div class="el-p">
+							<p dir="auto"><a data-href="Люди" href="мир-боатариса/народы/люди.html" class="internal-link" target="_self" rel="noopener nofollow">Люди</a> и <a data-href="Эльфы" href="мир-боатариса/народы/эльфы.html" class="internal-link" target="_self" rel="noopener nofollow">Эльфы</a> должны использовать Большое оружие двумя руками, а Среднее и Малое могут использовать в одной. <a data-href="Дварфы" href="мир-боатариса/народы/дварфы.html" class="internal-link" target="_self" rel="noopener nofollow">Дварфы</a>, благодаря своему телосложению, могут использовать некоторые виды Большого оружия в двух руках, несмотря на свой рост, но обращение с Большим оружием больше четырех футов в длину для них невозможно (в частности, с двуручными мечами, древковым оружием и длинными луками). Определенные виды оружия конструктивно требуют использования двумя руками (например, луки и арбалеты), но ограничения по размеру всё равно применимы.</p>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Оружие ближнего боя" dir="auto" class="heading" id="Оружие_ближнего_боя_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Оружие ближнего боя</h3>
+						</div>
+						<div class="el-table" dir="ltr" style="overflow-x: auto;">
+							<table>
+								<thead>
+									<tr>
+										<th dir="ltr">Оружие</th>
+										<th dir="ltr">Размер</th>
+										<th dir="ltr">Стоимость</th>
+										<th dir="ltr">Нагрузка</th>
+										<th dir="ltr">Урон</th>
+										<th dir="ltr">Свойства</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td dir="ltr"><strong><em>Топоры</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Ручной топорик</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">30 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d6</td>
+										<td dir="ltr">Метательное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Боевой топор</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">52.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Двуручный топор</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">105 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d10</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Кинжалы</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Кинжал</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d4</td>
+										<td dir="ltr">Метательное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Мечи</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Короткий меч/Катлэсс</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">45 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Длинный меч/скимитар</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">75 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Двуручный меч</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">135 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d10</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Молоты и дубины</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Боевой молот</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">30 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d6</td>
+										<td dir="ltr">Метательное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Булава</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">45 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Двуручный молот</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">75 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d10</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Копья и древковое оружие</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Копье</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">37.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto"></td>
+										<td dir="ltr">Метательное, опорное, атака с разбега</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Брошенное (одной рукой)</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> В ближнем бою (одной рукой)</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> В ближнем бою (двумя руками)</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Двузубец, трезубец</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">45 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto"></td>
+										<td dir="ltr">Метательное, особое, опорное, атака с разбега</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Брошенный (одной рукой)</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> В ближнем бою (одной рукой)</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> В ближнем бою (двумя руками)</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Кавалерийская пика</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">75 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d8</td>
+										<td dir="ltr">Опорное, атака с разбега</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Боевой посох</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Алебарды, глефы, гвизармы и т. п.</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">67.5 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d10</td>
+										<td dir="ltr">Опорное, атака с разбега</td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Цепы</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Цепь *</td>
+										<td dir="ltr">С/Б</td>
+										<td dir="ltr">67.5 см</td>
+										<td dir="ltr">1 или 2</td>
+										<td dir="ltr">1d4</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Цеп</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">60 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Большой цеп</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">90 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d10</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Хлыст</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">22.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d3</td>
+										<td dir="ltr">Особое</td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Прочее оружие</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Дубинка/посох для ходьбы</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d4</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Двуручная дубина</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">22.5 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Блекджек</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">7.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d4</td>
+										<td dir="ltr">Несмертельное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Крюк</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">45 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d4</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Серп</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Коса</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">52.5 см</td>
+										<td dir="auto">2</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Импровизированное оружие</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="ltr">Импровизированное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Подручный предмет</td>
+										<td dir="ltr">М</td>
+										<td dir="auto">-</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d3</td>
+										<td dir="ltr">Метательное</td>
+									</tr>
+									<tr>
+										<td dir="auto"></td>
+										<td dir="ltr">С</td>
+										<td dir="auto">-</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d4</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Лопата</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Лом</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Вилы</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">7.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Сковорода</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">6 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d4</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Факел</td>
+										<td dir="ltr">М</td>
+										<td dir="auto">-</td>
+										<td dir="auto">†</td>
+										<td dir="ltr">1d3</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Кулачный бой</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Кулак</td>
+										<td dir="auto">-</td>
+										<td dir="auto">-</td>
+										<td dir="auto">-</td>
+										<td dir="ltr">1d4</td>
+										<td dir="ltr">Несмертельное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Пинок</td>
+										<td dir="auto">-</td>
+										<td dir="auto">-</td>
+										<td dir="auto">-</td>
+										<td dir="ltr">1d3</td>
+										<td dir="ltr">Несмертельное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Латная перчатка, навершие рукояти</td>
+										<td dir="auto">-</td>
+										<td dir="auto">-</td>
+										<td dir="auto">-</td>
+										<td dir="ltr">1d3</td>
+										<td dir="ltr">Несмертельное</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Цестус, шипованная перчатка</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">7.5 см</td>
+										<td dir="auto">-</td>
+										<td dir="ltr">1d3</td>
+										<td dir="auto"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="el-p">
+							<p dir="auto">* Минимальная стоимость и нагрузка.<br>
+								† Ненагружающие предметы.</p>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Оружие дальнего боя" dir="auto" class="heading" id="Оружие_дальнего_боя_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Оружие дальнего боя</h3>
+						</div>
+						<div class="el-table" dir="ltr" style="overflow-x: auto;">
+							<table>
+								<thead>
+									<tr>
+										<th dir="ltr">Оружие</th>
+										<th dir="ltr">Размер</th>
+										<th dir="ltr">Стоимость</th>
+										<th dir="ltr">Нагрузка</th>
+										<th dir="ltr">Урон</th>
+										<th dir="ltr">Свойства</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td dir="ltr"><strong><em>Луки и арбалеты</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Короткий лук</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">25 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Стрела для к. лука</td>
+										<td dir="auto"></td>
+										<td dir="ltr">1 см</td>
+										<td dir="auto">*</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Длинный лук</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">60 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Стрела для д. лука</td>
+										<td dir="auto"></td>
+										<td dir="ltr">2 см</td>
+										<td dir="auto">*</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Легкий арбалет</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">75 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto"></td>
+										<td dir="ltr">Перезарядка (1)</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Болт для л. арбалета</td>
+										<td dir="auto"></td>
+										<td dir="ltr">2 см</td>
+										<td dir="auto">* *</td>
+										<td dir="ltr">1d6</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Тяжелый арбалет</td>
+										<td dir="ltr">Б</td>
+										<td dir="ltr">175 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto"></td>
+										<td dir="ltr">Перезарядка (2)</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Болт для т. арбалет</td>
+										<td dir="auto"></td>
+										<td dir="ltr">4 см</td>
+										<td dir="auto">* *</td>
+										<td dir="ltr">1d8</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"><strong><em>Пращи и метательное оружие</em></strong></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Праща</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">7.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Снаряд для пращи</td>
+										<td dir="auto"></td>
+										<td dir="ltr">1 см</td>
+										<td dir="auto">†</td>
+										<td dir="ltr">1d4</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Камень</td>
+										<td dir="auto"></td>
+										<td dir="auto">-</td>
+										<td dir="auto">†</td>
+										<td dir="ltr">1d3</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Бола</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d3</td>
+										<td dir="ltr">Опутывающее, особое</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Дротик, метательный нож</td>
+										<td dir="ltr">М</td>
+										<td dir="ltr">7.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d3</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Метательное копье</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">7.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d4</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Духовая трубка</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">15 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto"></td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Дротик для трубки</td>
+										<td dir="auto"></td>
+										<td dir="ltr">1 см</td>
+										<td dir="auto">†</td>
+										<td dir="ltr">1d3</td>
+										<td dir="auto"></td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Сеть</td>
+										<td dir="ltr">С</td>
+										<td dir="ltr">150 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto">-</td>
+										<td dir="ltr">Опутывающее, особое</td>
+									</tr>
+									<tr>
+										<td dir="ltr"> Подручный предмет</td>
+										<td dir="ltr">М-С</td>
+										<td dir="auto">-</td>
+										<td dir="auto">1</td>
+										<td dir="ltr">1d3</td>
+										<td dir="auto"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="el-p">
+							<p dir="auto">* Один колчан с двадцатью стрелами включен в нагрузку лука.<br>
+								** Один чехол с тридцатью болтами включен в нагрузку арбалета.<br>
+								† Ненагружающие предметы.</p>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Дистанции оружия дальнего боя" dir="auto" class="heading" id="Дистанции_оружия_дальнего_боя_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Дистанции оружия дальнего боя</h3>
+						</div>
+						<div class="el-table" dir="ltr" style="overflow-x: auto;">
+							<table>
+								<thead>
+									<tr>
+										<th dir="ltr">Оружие</th>
+										<th dir="ltr">Короткая (+1)</th>
+										<th dir="ltr">Средняя (0)</th>
+										<th dir="ltr">Длинная (-1)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td dir="ltr">Длинный лук</td>
+										<td dir="auto">70</td>
+										<td dir="auto">140</td>
+										<td dir="auto">210</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Короткий лук</td>
+										<td dir="auto">50</td>
+										<td dir="auto">100</td>
+										<td dir="auto">150</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Тяжелый арбалет</td>
+										<td dir="auto">80</td>
+										<td dir="auto">160</td>
+										<td dir="auto">240</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Легкий арбалет</td>
+										<td dir="auto">60</td>
+										<td dir="auto">120</td>
+										<td dir="auto">180</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Бола</td>
+										<td dir="auto">20</td>
+										<td dir="auto">40</td>
+										<td dir="auto">60</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Духовая трубка</td>
+										<td dir="auto">10</td>
+										<td dir="auto">20</td>
+										<td dir="auto">30</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Кинжал, дротик, метательный нож</td>
+										<td dir="auto">10</td>
+										<td dir="auto">20</td>
+										<td dir="auto">30</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Боевой молот</td>
+										<td dir="auto">10</td>
+										<td dir="auto">20</td>
+										<td dir="auto">30</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Ручной топорик</td>
+										<td dir="auto">10</td>
+										<td dir="auto">20</td>
+										<td dir="auto">30</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Масло, святая вода</td>
+										<td dir="auto">10</td>
+										<td dir="auto">30</td>
+										<td dir="auto">50</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Праща</td>
+										<td dir="auto">30</td>
+										<td dir="auto">60</td>
+										<td dir="auto">90</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Копье, двузубец, трезубец</td>
+										<td dir="auto">10</td>
+										<td dir="auto">20</td>
+										<td dir="auto">30</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Метательное копье</td>
+										<td dir="auto">20</td>
+										<td dir="auto">40</td>
+										<td dir="auto">60</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Сеть</td>
+										<td dir="auto">10</td>
+										<td dir="auto">15</td>
+										<td dir="auto">20</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Подручный предмет</td>
+										<td dir="auto">-</td>
+										<td dir="auto">10</td>
+										<td dir="auto">20</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="el-p">
+							<p dir="auto">Расстояния даны в футах. В открытом пространстве футы заменяются на ярды (расстояния увеличиваются в три раза). На Короткой дистанции атака производится с бонусом +1; на дистанции дальше Средней, но не большей, чем Длинная, атака производится со штрафом -1.</p>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Свойства оружия" dir="auto" class="heading" id="Свойства_оружия_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Свойства оружия</h3>
+						</div>
+						<div class="el-p">
+							<p dir="auto"><strong>Метательное:</strong> оружие можно применить в дальнем бою.<br>
+								<strong>Опорное:</strong> оружие можно опереть о землю для противостояния противнику, <em>атакующему с разбега</em>.<br>
+								<strong>Атака с разбега:</strong> оружие может быть применено в <em>атаке с разбега</em>.<br>
+								<strong>Несмертельное:</strong> атака таким оружием всегда наносит <em>несмертельный урон</em>.<br>
+								<strong>Импровизированное:</strong> атаки таким оружием производятся со штрафом -2.<br>
+								<strong>Перезарядка:</strong> оружию требуется указанное в скобках количество раундов для перезарядки.
+							</p>
+						</div>
+						<div class="el-p">
+							<p dir="auto"><strong>Особое оружие:</strong></p>
+						</div>
+						<div class="el-ul">
+							<ul class="has-list-bullet">
+								<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>Дву- и трезубцы</strong> могут быть применены для того, чтобы поймать противника или удержать его на расстоянии. Сдерживающая атака выполняется со штрафом -2 и наносит <em>несмертельный урон</em>.</li>
+								<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>Хлыст</strong> малоэффективен против прочных доспехов или существ с толстой шкурой: атаки против КБ 14 и больше не наносят урона.</li>
+								<li data-line="2" dir="auto"><span class="list-bullet"></span><strong>Бола</strong> представляет из себя два или три груза на шнуре и в основном предназначено для сдерживания противников. Атака этим оружием заставляет противника пройти спасбросок против паралича. При провале цель падает навзничь, теряя всю скорость передвижения и бонус ЛВК к КБ. Цель может быть освобождена (или освободиться самостоятельно, если это возможно), потратив полный раунд, либо вместо передвижения или атаки, если может перерезать шнур.</li>
+								<li data-line="3" dir="auto"><span class="list-bullet"></span><strong>Сеть</strong> при успешном попадании заставляет противника пройти спасбросок против паралича. При провале цель будет опутана на 1d4+1 раундов, либо на один раунд, если может разрезать сет. Сильные существа могут попробовать разорвать сеть (используется проверка для вышибания дверей). Обычная сеть может быть применена против противников человеческого размера.<br>
+									В ближнем бою сеть может быть применена, чтобы разоружить противника.</li>
+							</ul>
+						</div>
+						<div class="el-h2">
+							<h2 data-heading="Доспехи" dir="auto" class="heading" id="Доспехи_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Доспехи</h2>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Доспехи" dir="auto" class="heading" id="Доспехи_1"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Доспехи</h3>
+						</div>
+						<div class="el-table" dir="ltr" style="overflow-x: auto;">
+							<table>
+								<thead>
+									<tr>
+										<th dir="ltr">Доспехи</th>
+										<th dir="ltr">Стоимость</th>
+										<th dir="ltr">Нагрузка</th>
+										<th dir="ltr">КБ</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td dir="ltr">Без доспехов</td>
+										<td dir="auto">-</td>
+										<td dir="auto">-</td>
+										<td dir="auto">10</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Стеганый доспех</td>
+										<td dir="ltr">50 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto">11</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Кожаный доспех</td>
+										<td dir="ltr">80 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto">12</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Бригандина</td>
+										<td dir="ltr">320 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto">14</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Кольчуга</td>
+										<td dir="ltr">275 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto">14</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Латы</td>
+										<td dir="ltr">850 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto">16</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="el-h3">
+							<h3 data-heading="Щиты" dir="auto" class="heading" id="Щиты_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+										<path d="M3 8L12 17L21 8"></path>
+									</svg></span>Щиты</h3>
+						</div>
+						<div class="el-table" dir="ltr" style="overflow-x: auto;">
+							<table>
+								<thead>
+									<tr>
+										<th dir="ltr">Щит</th>
+										<th dir="ltr">Стоимость</th>
+										<th dir="ltr">Нагрузка</th>
+										<th dir="ltr">Бонус к КБ в ближнем/дальнем бою</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td dir="ltr">Баклер</td>
+										<td dir="ltr">37.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto">+1/0</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Щит</td>
+										<td dir="ltr">52.5 см</td>
+										<td dir="auto">1</td>
+										<td dir="auto">+1/+1</td>
+									</tr>
+									<tr>
+										<td dir="ltr">Башенный щит</td>
+										<td dir="ltr">112.5 см</td>
+										<td dir="auto">2</td>
+										<td dir="auto">+1/+3</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="footer">
+							<div class="data-bar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="right-content" class="leaf" style="--sidebar-width: var(--sidebar-width-right);">
+				<div id="right-sidebar" class="sidebar">
+					<div class="sidebar-handle"></div>
+					<div class="sidebar-topbar">
+						<div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input" id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
+								<div class="toggle-background"></div>
+							</label></div>
+						<div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+								<path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+								<path d="M10 4V20"></path>
+								<path d="M4 7H7"></path>
+								<path d="M4 10H7"></path>
+								<path d="M4 13H7"></path>
+							</svg></div>
+					</div>
+					<div class="sidebar-content-wrapper">
+						<div id="right-sidebar-content" class="leaf-content">
+							<div class="graph-view-wrapper">
+								<div class="feature-header">
+									<div class="feature-title">Интерактивный граф</div>
+								</div>
+								<div class="graph-view-placeholder">
+									<div class="graph-view-container">
+										<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+												<line x1="7" y1="17" x2="17" y2="7"></line>
+												<polyline points="7 7 17 7 17 17"></polyline>
+											</svg></div>
+										<div class="graph-icon graph-global" role="button" aria-label="Global Graph" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-git-fork">
+												<circle cx="12" cy="18" r="3"></circle>
+												<circle cx="6" cy="6" r="3"></circle>
+												<circle cx="18" cy="6" r="3"></circle>
+												<path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"></path>
+												<path d="M12 12v3"></path>
+											</svg></div>
+										<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+									</div>
+								</div>
+							</div>
+							<div id="outline" class=" tree-container">
+								<div class="feature-header">
+									<div class="feature-title">Содержание</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
+								</div>
+								<div class="tree-item mod-collapsible" data-depth="1"><a class="tree-item-self is-clickable mod-collapsible" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Список_снаряжения_0" data-path="#Список_снаряжения_0">
+										<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+												<path d="M3 8L12 17L21 8"></path>
+											</svg></div>
+										<div class="tree-item-inner heading-link" heading-name="Список снаряжения">Список снаряжения</div>
+									</a>
+									<div class="tree-item-children">
+										<div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable mod-collapsible" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Оружие_0" data-path="#Оружие_0">
+												<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+														<path d="M3 8L12 17L21 8"></path>
+													</svg></div>
+												<div class="tree-item-inner heading-link" heading-name="Оружие">Оружие</div>
+											</a>
+											<div class="tree-item-children">
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Стоимость_снаряжения_0" data-path="#Стоимость_снаряжения_0">
+														<div class="tree-item-inner heading-link" heading-name="Стоимость снаряжения">Стоимость снаряжения</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Размер_оружия_0" data-path="#Размер_оружия_0">
+														<div class="tree-item-inner heading-link" heading-name="Размер оружия">Размер оружия</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Оружие_ближнего_боя_0" data-path="#Оружие_ближнего_боя_0">
+														<div class="tree-item-inner heading-link" heading-name="Оружие ближнего боя">Оружие ближнего боя</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Оружие_дальнего_боя_0" data-path="#Оружие_дальнего_боя_0">
+														<div class="tree-item-inner heading-link" heading-name="Оружие дальнего боя">Оружие дальнего боя</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Дистанции_оружия_дальнего_боя_0" data-path="#Дистанции_оружия_дальнего_боя_0">
+														<div class="tree-item-inner heading-link" heading-name="Дистанции оружия дальнего боя">Дистанции оружия дальнего боя</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Свойства_оружия_0" data-path="#Свойства_оружия_0">
+														<div class="tree-item-inner heading-link" heading-name="Свойства оружия">Свойства оружия</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+											</div>
+										</div>
+										<div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable mod-collapsible" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Доспехи_0" data-path="#Доспехи_0">
+												<div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+														<path d="M3 8L12 17L21 8"></path>
+													</svg></div>
+												<div class="tree-item-inner heading-link" heading-name="Доспехи">Доспехи</div>
+											</a>
+											<div class="tree-item-children">
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Доспехи_1" data-path="#Доспехи_1">
+														<div class="tree-item-inner heading-link" heading-name="Доспехи">Доспехи</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+												<div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="правила-игры/персонажи/снаряжение/список-снаряжения.html#Щиты_0" data-path="#Щиты_0">
+														<div class="tree-item-inner heading-link" heading-name="Щиты">Щиты</div>
+													</a>
+													<div class="tree-item-children"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
