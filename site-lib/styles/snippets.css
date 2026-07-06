@@ -1,14 +1,1 @@
-.markdown-rendered tbody tr:nth-child(odd) {
-    background-color: var(--background-secondary)
-}
-
-.markdown-rendered tbody tr:nth-child(2n) {
-    background-color: var(--background-secondary-alt)
-}
-
-.markdown-rendered table td,
-.markdown-rendered table th {
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important
-}
+.markdown-rendered tbody tr:nth-child(odd){background-color:var(--background-secondary)!important}.markdown-rendered tbody tr:nth-child(2n){background-color:var(--background-secondary-alt)!important}.markdown-rendered table td,.markdown-rendered table th{border-top:none!important;border-left:none!important;border-right:none!important}
